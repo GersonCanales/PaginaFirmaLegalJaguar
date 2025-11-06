@@ -76,7 +76,7 @@ header nav ul li a:hover {
 
 /* ===== Botones principales arriba ===== */
 .botones-principal-top {
-  position: Fixed;
+  position: fixed;
   top: 40px;
   left: 50%;
   transform: translateX(-50%);
@@ -84,6 +84,30 @@ header nav ul li a:hover {
   flex-direction: row;
   gap: 15px;
   z-index: 5;
+}
+
+.botones-principal-top a {
+  text-decoration: none;
+}
+
+/* ===== Responsive solo para pantallas pequeñas ===== */
+@media (max-width: 900px) {
+  .botones-principal-top {
+    flex-wrap: wrap; /* se ajusta en varias filas solo en pantallas <900px */
+    gap: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .botones-principal-top {
+    flex-direction: column; /* botones apilados en móvil */
+    gap: 6px;
+    top: 10px;
+  }
+  .boton, .boton-secundario {
+    padding: 10px 10px;
+    font-size: 0.95rem;
+  }
 }
 
 .botones-principal-top a {
@@ -190,7 +214,6 @@ header nav ul li a:hover {
   height: 100%;
   background: radial-gradient(circle at top right, rgba(19, 26, 23, 0.8), rgba(26, 25, 24, 0.6));
   border-top-left-radius: 100%;
-
 }
 
 /* Logo centrado dentro de la curva */
@@ -239,8 +262,6 @@ header nav ul li a:hover {
   color: var(--negro-jaguar);
 }
 
-
-
 /* ===== Footer ===== */
 footer {
   background: var(--negro-jaguar);
@@ -263,8 +284,6 @@ footer .redes a {
   text-decoration: none;
 }
 
-
-
 /* Personalización de la barra de desplazamiento dorada */
 ::-webkit-scrollbar {
   width: 12px;
@@ -278,7 +297,7 @@ footer .redes a {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #e6c75a; /* un dorado más claro al pasar el mouse */
+  background: #e6c75a;
 }
 
 /* Para Firefox */
@@ -289,70 +308,29 @@ footer .redes a {
 
 /* ===== Responsive Design ===== */
 @media (max-width: 900px) {
-  .main-content {
-    padding-top: 100px;
-  }
-  .curva-verde {
-    width: 60vw;
-    height: 40%;
-    right: -20%;
-  }
-  .logo-img {
-    max-width: 180px;
-  }
-  .section-info {
-    width: 98%;
-    gap: 24px;
-  }
-  .botones-principal-top {
-    gap: 8px;
-  }
-  .boton, .boton-secundario {
-    padding: 12px 22px;
-    font-size: 1rem;
-  }
+  .main-content { padding-top: 100px; }
+  .curva-verde { width: 60vw; height: 40%; right: -20%; }
+  .logo-img { max-width: 180px; }
+  .section-info { width: 98%; gap: 24px; }
+  .botones-principal-top { gap: 8px; }
+  .boton, .boton-secundario { padding: 12px 22px; font-size: 1rem; }
 }
 
 @media (max-width: 600px) {
-  .main-content {
-    padding-top: 60px;
-    min-height: 60vh;
-  }
-  .curva-verde {
-    width: 90vw;
-    height: 30%;
-    right: -30%;
-  }
-  .logo-img {
-    max-width: 120px;
-  }
-  .section-info {
-    width: 100%;
-    padding: 0 4px;
-  }
+  .main-content { padding-top: 60px; min-height: 60vh; }
+  .curva-verde { width: 90vw; height: 30%; right: -30%; }
+  .logo-img { max-width: 120px; }
+  .section-info { width: 100%; padding: 0 4px; }
   .botones-principal-top {
     flex-direction: column;
     gap: 6px;
     top: 10px;
   }
-  .boton, .boton-secundario {
-    padding: 10px 10px;
-    font-size: 0.95rem;
-  }
-  header nav ul li a {
-    padding: 12px 0;
-    font-size: 1rem;
-  }
-  header nav ul {
-    flex-direction: column;
-  }
-  header nav ul li {
-    border-right: none;
-    border-bottom: 1px solid var(--negro-jaguar);
-  }
-  header nav ul li:last-child {
-    border-bottom: none;
-  }
+  .boton, .boton-secundario { padding: 10px 10px; font-size: 0.95rem; }
+  header nav ul li a { padding: 12px 0; font-size: 1rem; }
+  header nav ul { flex-direction: column; }
+  header nav ul li { border-right: none; border-bottom: 1px solid var(--negro-jaguar); }
+  header nav ul li:last-child { border-bottom: none; }
 }
 
 /* ===== Secciones modernas ===== */
@@ -411,8 +389,6 @@ footer .redes a {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 120px ;
-  
-
 }
 
 /* ===== Hero Banner ===== */
@@ -451,8 +427,7 @@ html {
   text-shadow: 0 4px 12px rgba(0,0,0,0.6);
   position: relative;
   top: 80px;
-    animation: texto-aparece 1s ease-out forwards;
-
+  animation: texto-aparece 1s ease-out forwards;
 }
 
 .hero-content p {
@@ -460,8 +435,7 @@ html {
   margin-top: 290px;
   color: var(--blanco);
   text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    animation: texto-aparece 1s ease-out forwards;
-
+  animation: texto-aparece 1s ease-out forwards;
 }
 
 /* Imagen del jaguar */
@@ -482,10 +456,11 @@ html {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
 }
+
 /* ===== Jaguar circular ===== */
 .jaguar-logo {
   position: absolute;
-  bottom: 20px; /* posición cerca del pie de página, ajusta a gusto */
+  bottom: 20px;
   left: 20px;
   width: 120px;
   height: 120px;
@@ -502,10 +477,9 @@ html {
   object-fit: cover;
 }
 
-/* ===== Segundo logo circular arriba del jaguar ===== */
 .jaguar-logo-alt {
   position: absolute;
-  bottom: 160px; /* más arriba que el jaguar original */
+  bottom: 160px;
   left: 20px;
   width: 110px;
   height: 110px;
@@ -522,11 +496,10 @@ html {
   object-fit: cover;
 }
 
-/* ===== Tercer logo circular ===== */
 .jaguar-logo-extra {
   position: absolute;
-  bottom: 300px; /* más arriba que los otros */
-  left: 20px; /* puedes cambiar a right:20px si lo quieres al otro lado */
+  bottom: 300px;
+  left: 20px;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -543,13 +516,6 @@ html {
 }
 
 /* ===== Ajustes específicos para las secciones ===== */
-
-
-
-
-
-
-
 .info-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
@@ -571,16 +537,24 @@ html {
   color: var(--negro-jaguar);
   font-size: 1.1rem;
   line-height: 1.8;
-  text-align: justify; /* <-- justifica el texto */
+  text-align: justify;
   margin: 0;
 }
 
 /* Ajuste especial solo para la sección "Sobre Nosotros" */
 #SobreNosotros.info-card {
-  max-width: 1200px; /* más ancho para ese texto largo */
+  max-width: 1200px;
   padding: 50px 60px;
 }
 
-
-
-
+/* ===== MEDIA QUERIES PARA MOVILES ===== */
+@media (max-width: 500px) {
+  .hero-content h1 { font-size: 2rem; top: 40px; }
+  .hero-content p { font-size: 1rem; margin-top: 60px; }
+  .botones-principal-top { top: 5px; gap: 4px; }
+  .boton, .boton-secundario { font-size: 0.85rem; padding: 8px 12px; }
+  .logo-img { max-width: 100px; }
+  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra { width: 80px; height: 80px; }
+  .curva-verde { width: 100vw; height: 25%; right: -40%; }
+  .section-info { width: 96%; padding: 0 4px; }
+}
