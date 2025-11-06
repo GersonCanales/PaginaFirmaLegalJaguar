@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo Jaguar - Servicios</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+
+:root {
+  --verde-jaguar: #007a45;
+  --dorado-jaguar: #c5a33f;
+  --negro-jaguar: #1c1c1c;
+  --blanco: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background-color: #007a45;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+h1 {
+  color: #c5a33f;
+  margin-bottom: 20px;
+}
+
+.servicios-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.servicio-item {
+  display: block;
+  background: rgba(255,255,255,0.1);
+  border-left: 6px solid #c5a33f;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.servicio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  color: #fff; /* mantiene el texto blanco al pasar el mouse */
+}
+
+.boton-regresar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 30px;
+  background: #c5a33f;
+  color: #007a45;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.boton-regresar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  color: #fff;
+}
+
+/* Barra de desplazamiento dorada */
+::-webkit-scrollbar {
+  width: 12px;
+  background: var(--negro-jaguar);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dorado-jaguar);
+  border-radius: 8px;
+  border: 2px solid var(--negro-jaguar);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e6c75a;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--dorado-jaguar) var(--negro-jaguar);
+}
+
+  </style>
+</head>
+<body>
+
+  <h1>Servicios de Firma Legal Jaguar</h1>
+
+  <div class="servicios-list">
+    <a href="penal.html" class="servicio-item"><i class="fas fa-gavel"></i> Penal</a>
+    <a href="civil.html" class="servicio-item"><i class="fas fa-balance-scale"></i> Civil</a>
+    <a href="laboral.html" class="servicio-item"><i class="fas fa-briefcase"></i> Laboral</a>
+    <a href="administrativo.html" class="servicio-item"><i class="fas fa-university"></i> Administrativo</a>
+    <a href="familia.html" class="servicio-item"><i class="fas fa-users"></i> Familia</a>
+    <a href="ambientales.html" class="servicio-item"><i class="fas fa-leaf"></i> Ambientales</a>
+    <a href="mercantiles.html" class="servicio-item"><i class="fas fa-store"></i> Mercantiles</a>
+    <a href="notariales.html" class="servicio-item"><i class="fas fa-file-signature"></i> Notariales</a>
+    <a href="conciliaciones.html" class="servicio-item"><i class="fas fa-handshake"></i> Conciliaciones</a>
+    <a href="extranjeros.html" class="servicio-item"><i class="fas fa-globe"></i> Extranjeros</a>
+    <a href="otros.html" class="servicio-item"><i class="fas fa-ellipsis-h"></i> Entre Otros</a>
+  </div>
+
+  <a href="index.html" class="boton-regresar"><i class="fas fa-arrow-left"></i> Regresar al menú</a>
+
+</body>
+</html>

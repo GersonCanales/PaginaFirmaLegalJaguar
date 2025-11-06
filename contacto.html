@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto Legal Jaguar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #16222A, #3A6073);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-section {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+}
+
+.contact-section h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+/* contenedor con dos columnas */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-group {
+    width: 45%;
+}
+
+.contact-item {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-item .icon {
+    font-size: 22px;
+}
+
+/* Colores de íconos */
+.fa-envelope { color: #fbbc05; }
+.fa-whatsapp { color: #25D366; }
+.fa-facebook-f { color: #1877f2; }
+.fa-instagram { color: #e4405f; }
+
+.contact-item a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #00eaff;
+}
+
+/* Botón de regresar */
+    .boton-regresar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #007a45, #c5a33f);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: all 0.3s;
+    }
+
+    .boton-regresar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    color: #1c1c1c;
+    }
+</style>
+</head>
+<body>
+
+<div class="contact-section">
+    <h2>Contáctanos</h2>
+
+    <div class="contact-container">
+        <div class="contact-group">
+            <div class="contact-item">
+                <span class="icon"><i class="fas fa-envelope"></i></span>
+                <a href="mailto:firmalegaljaguar@gmail.com">firmalegaljaguar@gmail.com</a>
+            </div>
+
+            <div class="contact-item">
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+                <a href="https://wa.me/50496667870" target="_blank">WhatsApp: 9666 7870</a>
+            </div>
+        </div>
+
+        <div class="contact-group">
+            <div class="contact-item">
+                <span class="icon"><i class="fab fa-facebook-f"></i></span>
+                <a href="https://www.facebook.com/Jaguarlegal?locale=es_LA" target="_blank">Facebook</a>
+            </div>
+
+            <div class="contact-item">
+                <span class="icon"><i class="fab fa-instagram"></i></span>
+                <a href="https://www.instagram.com/firmalegaljaguar/" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </div>
+
+    <a href="index.html" class="boton-regresar"><i class="fas fa-arrow-left"></i> Regresar al menú</a>
+</div>
+
+</body>
+</html>

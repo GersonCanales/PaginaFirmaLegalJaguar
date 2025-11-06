@@ -1,0 +1,586 @@
+/* ===== Paleta de colores ===== */
+:root {
+  --verde-jaguar: #007a45;
+  --dorado-jaguar: #c5a33f;
+  --negro-jaguar: #1c1c1c;
+  --blanco: #fff;
+}
+
+/* ===== General ===== */
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: black;
+  color: var(--negro-jaguar);
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+header {
+  width: 100%;
+  background: var(--blanco);
+  border-bottom: 2px solid var(--negro-jaguar);
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid var(--negro-jaguar);
+}
+
+header nav ul li:last-child {
+  border-right: none;
+}
+
+header nav ul li a {
+  display: block;
+  padding: 24px 0;
+  color: var(--negro-jaguar);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: background 0.2s, color 0.2s;
+}
+
+header nav ul li a:hover {
+  background: var(--verde-jaguar);
+  color: var(--blanco);
+}
+
+/* ===== Main content ===== */
+.main-content {
+  position: relative;
+  width: 100vw;
+  min-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 160px; /* espacio para botones */
+}
+
+/* ===== Botones principales arriba ===== */
+.botones-principal-top {
+  position: Fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  z-index: 5;
+}
+
+.botones-principal-top a {
+  text-decoration: none;
+}
+
+/* ===== Botones modernos ===== */
+.boton, .boton-secundario {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+
+.boton {
+  color: var(--blanco);
+  background: linear-gradient(135deg, #007a45, #c5a33f);
+  border: none;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.boton:hover {
+  background: linear-gradient(135deg, #c5a33f, #007a45);
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+  color: var(--negro-jaguar);
+}
+
+.boton:active {
+  transform: scale(0.95);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.boton-secundario {
+  color: #007a45;
+  background: var(--blanco);
+  border: 3px solid #007a45;
+  box-shadow: 0 8px 20px rgba(0,107,60,0.15);
+}
+
+.boton-secundario:hover {
+  background: #007a45;
+  color: var(--blanco);
+  border-color: #c5a33f;
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Iconos en botones */
+.boton i, .boton-secundario i {
+  font-size: 1.3rem;
+  transition: transform 0.3s;
+}
+
+.boton:hover i, .boton-secundario:hover i {
+  transform: translateX(6px);
+}
+
+/* ===== Fondo con video ===== */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.background-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+/* ===== Curva verde y logotipo mejorado ===== */
+.curva-verde {
+  position: absolute;
+  right: -10%;
+  bottom: 0;
+  width: 40vw;
+  height: 50%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.curva-verde::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 30px; /* ajusta según necesidad */
+  width: 70%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(19, 26, 23, 0.8), rgba(26, 25, 24, 0.6));
+  border-top-left-radius: 100%;
+
+}
+
+/* Logo centrado dentro de la curva */
+.logo-img {
+  position: absolute;
+  top: 60%;
+  left: 65%;
+  transform: translate(-60%, -56%);
+  z-index: 3;
+  max-width: 300px;
+  height: auto;
+}
+
+/* ===== Sección de información ===== */
+.section-info {
+  width: 90%;
+  max-width: 1000px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.section-info .info-card {
+  background: var(--blanco);
+  border-left: 6px solid var(--verde-jaguar);
+  border-radius: 16px;
+  padding: 24px 28px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.section-info .info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+}
+
+.section-info .info-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: var(--verde-jaguar);
+}
+
+.section-info .info-card p {
+  margin: 0;
+  color: var(--negro-jaguar);
+}
+
+
+
+/* ===== Footer ===== */
+footer {
+  background: var(--negro-jaguar);
+  color: var(--dorado-jaguar);
+  text-align: center;
+  padding: 66px 0 8px 0 ;
+  font-size: 1rem;
+  margin-top: -2.9%;
+  width: 100%;
+  height: 70%;
+}
+
+footer .redes {
+  margin-bottom: 8px;
+}
+
+footer .redes a {
+  color: var(--dorado-jaguar);
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+
+
+/* Personalización de la barra de desplazamiento dorada */
+::-webkit-scrollbar {
+  width: 12px;
+  background: var(--negro-jaguar);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dorado-jaguar);
+  border-radius: 8px;
+  border: 2px solid var(--negro-jaguar);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e6c75a; /* un dorado más claro al pasar el mouse */
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--dorado-jaguar) var(--negro-jaguar);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+  .main-content {
+    padding-top: 100px;
+  }
+  .curva-verde {
+    width: 60vw;
+    height: 40%;
+    right: -20%;
+  }
+  .logo-img {
+    max-width: 180px;
+  }
+  .section-info {
+    width: 98%;
+    gap: 24px;
+  }
+  .botones-principal-top {
+    gap: 8px;
+  }
+  .boton, .boton-secundario {
+    padding: 12px 22px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    padding-top: 60px;
+    min-height: 60vh;
+  }
+  .curva-verde {
+    width: 90vw;
+    height: 30%;
+    right: -30%;
+  }
+  .logo-img {
+    max-width: 120px;
+  }
+  .section-info {
+    width: 100%;
+    padding: 0 4px;
+  }
+  .botones-principal-top {
+    flex-direction: column;
+    gap: 6px;
+    top: 10px;
+  }
+  .boton, .boton-secundario {
+    padding: 10px 10px;
+    font-size: 0.95rem;
+  }
+  header nav ul li a {
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+  header nav ul {
+    flex-direction: column;
+  }
+  header nav ul li {
+    border-right: none;
+    border-bottom: 1px solid var(--negro-jaguar);
+  }
+  header nav ul li:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ===== Secciones modernas ===== */
+.section-info {
+  max-width: 700px;
+  margin: 60px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+.info-card {
+  background: rgba(255,255,255,0.07);
+  border: 2px solid var(--dorado-jaguar);
+  border-radius: 22px;
+  box-shadow: 0 8px 32px -8px rgba(197,163,63,0.18), 0 2px 0 var(--verde-jaguar) inset;
+  padding: 36px 28px 28px 28px;
+  margin-bottom: 40px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.info-card:hover {
+  box-shadow: 0 16px 40px 0 rgba(0,122,69,0.25), 0 0 0 4px var(--dorado-jaguar) inset;
+  transform: translateY(-8px) scale(1.03);
+  z-index: 20;
+}
+.info-card h2 {
+  color: var(--dorado-jaguar);
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.info-card p {
+  color: blacks;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin: 0;
+  text-align: center;
+}
+
+/* Fondo blanco solo detrás de las secciones de información */
+.fondo-secciones {
+  width: 100vw;
+  background: var(--blanco);
+  position: relative;
+  z-index: 0;
+  padding: 60px 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px ;
+  
+
+}
+
+/* ===== Hero Banner ===== */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--blanco);
+  overflow: hidden;
+  background: url("IMG/fondo-selva-martillo.jpg") no-repeat center center/cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 90%; height: 90%;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+  animation: texto-aparece 1s ease-out forwards;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--dorado-jaguar);
+  text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  position: relative;
+  top: 80px;
+    animation: texto-aparece 1s ease-out forwards;
+
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-top: 290px;
+  color: var(--blanco);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    animation: texto-aparece 1s ease-out forwards;
+
+}
+
+/* Imagen del jaguar */
+.jaguar-img {
+  margin-top: 25px;
+  max-width: 280px;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.7));
+  animation: jaguar-float 4s ease-in-out infinite;
+}
+
+/* Animacion de texto */
+@keyframes texto-aparece {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes jaguar-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+/* ===== Jaguar circular ===== */
+.jaguar-logo {
+  position: absolute;
+  bottom: 20px; /* posición cerca del pie de página, ajusta a gusto */
+  left: 20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--dorado-jaguar);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+
+.jaguar-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Segundo logo circular arriba del jaguar ===== */
+.jaguar-logo-alt {
+  position: absolute;
+  bottom: 160px; /* más arriba que el jaguar original */
+  left: 20px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--verde-jaguar);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+
+.jaguar-logo-alt img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Tercer logo circular ===== */
+.jaguar-logo-extra {
+  position: absolute;
+  bottom: 300px; /* más arriba que los otros */
+  left: 20px; /* puedes cambiar a right:20px si lo quieres al otro lado */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--dorado-jaguar);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+
+.jaguar-logo-extra img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Ajustes específicos para las secciones ===== */
+
+
+
+
+
+
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Títulos */
+.info-card h2 {
+  text-align: center;
+  color: var(--verde-jaguar);
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 3px solid var(--dorado-jaguar);
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+/* Párrafos (ajuste principal) */
+.info-card p {
+  color: var(--negro-jaguar);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify; /* <-- justifica el texto */
+  margin: 0;
+}
+
+/* Ajuste especial solo para la sección "Sobre Nosotros" */
+#SobreNosotros.info-card {
+  max-width: 1200px; /* más ancho para ese texto largo */
+  padding: 50px 60px;
+}
+
+
+
+

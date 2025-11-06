@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firma Legal Jaguar - Alianzas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+
+    html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #0b0b0b; /* opcional: asegura que no se vea blanco en el borde */
+    box-sizing: border-box;
+}
+
+/* ===== Sección de Alianzas ===== */
+.alianzas-section {
+    background: linear-gradient(135deg, #0b0b0b, #1e1e1e);
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+    font-family: 'Poppins', sans-serif;
+    
+    /* Agregar estas dos líneas */
+    min-height: 100vh;   /* Altura mínima: 100% de la ventana */
+    box-sizing: border-box; /* Para que el padding no afecte la altura */
+}
+
+
+.alianzas-section h2 {
+    color: #c5a33f;
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.alianzas-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.alianza-card {
+    background: #ffffff10;
+    border: 2px solid #c5a33f;
+    border-radius: 16px;
+    padding: 30px 20px;
+    width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.alianza-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 35px rgba(197,163,63,0.3);
+}
+
+.alianza-card i {
+    font-size: 2.5rem;
+    color: #007a45;
+    margin-bottom: 15px;
+}
+
+.alianza-card h3 {
+    color: #c5a33f;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.alianza-card p {
+    color: #e0e0e0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+    .boton-regresar {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #007a45, #c5a33f);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: all 0.3s;
+    }
+
+    .boton-regresar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      color: #1c1c1c;
+    }
+
+:root {
+  --verde-jaguar: #007a45;
+  --dorado-jaguar: #c5a33f;
+  --negro-jaguar: #1c1c1c;
+  --blanco: #fff;
+}
+
+/* ...tus otros estilos... */
+
+/* Personalización de la barra de desplazamiento dorada */
+::-webkit-scrollbar {
+  width: 12px;
+  background: var(--negro-jaguar);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dorado-jaguar);
+  border-radius: 8px;
+  border: 2px solid var(--negro-jaguar);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e6c75a; /* un dorado más claro al pasar el mouse */
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--dorado-jaguar) var(--negro-jaguar);
+}
+
+  </style>
+</head>
+<body>
+
+<section class="alianzas-section">
+    <h2>Nuestras Alianzas</h2>
+
+    <div class="alianzas-container">
+
+        <div class="alianza-card">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>CEJ-FORCON-JAGUAR</h3>
+            <p>Centro de Estudios Jurídicos y Formación Continua Jaguar.</p>
+        </div>
+
+        <div class="alianza-card">
+            <i class="fas fa-broom"></i>
+            <h3>Elimag</h3>
+            <p>Empresa de Limpieza y Mantenimiento General.</p>
+        </div>
+
+        <div class="alianza-card">
+            <i class="fas fa-hand-holding-usd"></i>
+            <h3>Grupo Financiero Taulabe</h3>
+            <p>Servicios financieros y asesoramiento empresarial.</p>
+        </div>
+
+          <a href="index.html" class="boton-regresar"><i class="fas fa-arrow-left"></i> Regresar al menú</a>
+    </div>
+</section>
+
+</body>
+</html>
