@@ -491,6 +491,7 @@ footer .redes a {
     max-width: 150px;
   }
   
+  
   .curva-verde {
     width: 70vw;
     right: -15%;
@@ -548,202 +549,87 @@ footer .redes a {
 
 /* ===== TELÉFONOS EN HORIZONTAL (Landscape) ===== */
 @media (max-width: 900px) and (orientation: landscape) {
-  /* SIEMPRE MENÚ HAMBURGUESA - OCULTAR BOTONES NORMALES */
-  .botones-principal-top {
+  /* OCULTAR menú hamburguesa y MOSTRAR botones normales COMO PC */
+  .header-mobile {
     display: none !important;
   }
   
-  .header-mobile {
-    display: block !important;
+  .botones-principal-top {
+    display: flex !important;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 1000;
-    padding: 8px 15px;
-    border-bottom: 2px solid var(--dorado-jaguar);
-  }
-  
-  .hamburger {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    gap: 10px;
-  }
-  
-  .hamburger span {
-    width: 22px;
-    height: 2.5px;
-    background: var(--dorado-jaguar);
-    margin: 2.5px 0;
-    transition: 0.3s;
-    border-radius: 2px;
-  }
-  
-  /* MENSAJE MÁS COMPACTO PARA HORIZONTAL */
-  .hamburger::after {
-    content: "MENÚ";
-    color: var(--dorado-jaguar);
-    font-weight: bold;
-    font-size: 0.9rem;
-  }
-  
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-  
-  .mobile-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.98);
-    padding: 12px 0;
-    z-index: 999;
-    border-top: 1px solid var(--verde-jaguar);
-  }
-  
-  .mobile-menu.active {
-    display: block;
-  }
-  
-  .mobile-menu a {
-    display: flex;
-    align-items: center;
-    color: var(--blanco);
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.3s;
-  }
-  
-  .mobile-menu a:hover {
-    background: var(--verde-jaguar);
-    padding-left: 25px;
-  }
-  
-  .mobile-menu a i {
-    margin-right: 10px;
-    width: 18px;
-    text-align: center;
-    font-size: 1rem;
-    color: var(--dorado-jaguar);
-  }
-  
-  .main-content {
-    padding-top: 60px;
-    min-height: 60vh;
-  }
-  
-  .hero-content h1 {
-    font-size: 1.6rem;
     top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    gap: 8px;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px 20px;
+    border-radius: 50px;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(197, 163, 63, 0.3);
+    width: auto;
+    max-width: 95%;
+    flex-wrap: nowrap;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   }
   
-  .hero-content p {
+  /* BOTONES COMO PC PERO MÁS PEQUEÑOS */
+  .boton, .boton-secundario {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    gap: 6px;
+    white-space: nowrap;
+    min-width: auto;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+  
+  /* Botones primarios - igual que PC */
+  .boton {
+    color: var(--blanco);
+    background: linear-gradient(135deg, #007a45, #c5a33f);
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+  
+  .boton:hover {
+    background: linear-gradient(135deg, #c5a33f, #007a45);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  }
+  
+  /* Botones secundarios - igual que PC */
+  .boton-secundario {
+    color: #007a45;
+    background: var(--blanco);
+    border: 2px solid #007a45;
+    box-shadow: 0 4px 12px rgba(0,107,60,0.15);
+  }
+  
+  .boton-secundario:hover {
+    background: #007a45;
+    color: var(--blanco);
+    border-color: #c5a33f;
+    transform: translateY(-2px) scale(1.03);
+  }
+  
+  /* Iconos con efectos igual que PC */
+  .boton i, .boton-secundario i {
     font-size: 0.9rem;
-    margin-top: 80px;
+    transition: transform 0.3s;
   }
   
-  .logo-img {
-    max-width: 100px;
-  }
-  
-  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .jaguar-logo-alt {
-    bottom: 70px;
-  }
-  
-  .jaguar-logo-extra {
-    bottom: 130px;
-  }
-}
-
-/* ===== TELÉFONOS HORIZONTALES MÁS PEQUEÑOS ===== */
-@media (max-width: 700px) and (orientation: landscape) and (max-height: 400px) {
-  .header-mobile {
-    padding: 6px 12px;
-  }
-  
-  .hamburger::after {
-    font-size: 0.8rem;
-  }
-  
-  .hamburger span {
-    width: 20px;
-    height: 2px;
-  }
-  
-  .mobile-menu a {
-    padding: 8px 15px;
-    font-size: 0.8rem;
+  .boton:hover i, .boton-secundario:hover i {
+    transform: translateX(3px);
   }
   
   .main-content {
-    padding-top: 50px;
-    min-height: 50vh;
-  }
-  
-  .hero-content h1 {
-    font-size: 1.4rem;
-    top: 10px;
-  }
-  
-  .hero-content p {
-    font-size: 0.8rem;
-    margin-top: 60px;
-  }
-  
-  .logo-img {
-    max-width: 80px;
-  }
-  
-  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .jaguar-logo-alt {
-    bottom: 60px;
-  }
-  
-  .jaguar-logo-extra {
-    bottom: 110px;
-  }
-}
-
-/* ===== TELÉFONOS HORIZONTALES GRANDES (Tablets pequeñas) ===== */
-@media (min-width: 701px) and (max-width: 900px) and (orientation: landscape) {
-  .header-mobile {
-    padding: 10px 15px;
-  }
-  
-  .hamburger::after {
-    font-size: 1rem;
-  }
-  
-  .mobile-menu a {
-    padding: 12px 20px;
-    font-size: 1rem;
-  }
-  
-  .main-content {
-    padding-top: 80px;
+    padding-top: 100px;
+    min-height: 60vh;
   }
   
   .hero-content h1 {
@@ -771,5 +657,106 @@ footer .redes a {
   
   .jaguar-logo-extra {
     bottom: 170px;
+  }
+}
+
+/* ===== TELÉFONOS HORIZONTALES MÁS PEQUEÑOS ===== */
+@media (max-width: 700px) and (orientation: landscape) and (max-height: 400px) {
+  .botones-principal-top {
+    top: 10px;
+    padding: 8px 15px;
+    gap: 6px;
+  }
+  
+  .boton, .boton-secundario {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    gap: 4px;
+  }
+  
+  .boton i, .boton-secundario i {
+    font-size: 0.8rem;
+  }
+  
+  .main-content {
+    padding-top: 80px;
+    min-height: 50vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.6rem;
+    top: 15px;
+  }
+  
+  .hero-content p {
+    font-size: 0.9rem;
+    margin-top: 80px;
+  }
+  
+  .logo-img {
+    max-width: 120px;
+  }
+  
+  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .jaguar-logo-alt {
+    bottom: 70px;
+  }
+  
+  .jaguar-logo-extra {
+    bottom: 130px;
+  }
+}
+
+/* ===== TELÉFONOS HORIZONTALES GRANDES (Tablets pequeñas) ===== */
+@media (min-width: 701px) and (max-width: 900px) and (orientation: landscape) {
+  .botones-principal-top {
+    top: 20px;
+    gap: 12px;
+    padding: 12px 22px;
+  }
+  
+  .boton, .boton-secundario {
+    padding: 12px 18px;
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+  
+  .boton i, .boton-secundario i {
+    font-size: 1rem;
+  }
+  
+  .main-content {
+    padding-top: 120px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+    top: 40px;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-top: 140px;
+  }
+  
+  .logo-img {
+    max-width: 180px;
+  }
+  
+  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .jaguar-logo-alt {
+    bottom: 95px;
+  }
+  
+  .jaguar-logo-extra {
+    bottom: 180px;
   }
 }
