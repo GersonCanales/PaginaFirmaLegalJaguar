@@ -477,7 +477,7 @@ footer .redes a {
   
   /* Iconos más grandes */
   .boton i, .boton-secundario i {
-    font-size: 0.4rem !important;
+    font-size: 0.7rem !important;
     transition: transform 0.3s;
   }
   
@@ -492,7 +492,7 @@ footer .redes a {
   
   /* Resto se mantiene igual */
   .logo-img {
-    max-width: 140px;
+    max-width: 100px;
   }
   
   .hero-content h1 {
