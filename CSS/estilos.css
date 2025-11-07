@@ -623,23 +623,23 @@ footer .redes a {
 /* ===== TELÉFONOS HORIZONTALES MÁS PEQUEÑOS ===== */
 @media (max-width: 700px) and (orientation: landscape) and (max-height: 400px) {
   .botones-principal-top {
-    top: 8px;
-    padding: 8px 15px;
+    top: 9px;
+    padding: 8px 12px;
     gap: 6px;
   }
   
   .boton, .boton-secundario {
-    padding: 8px 12px;
-    font-size: 0.8rem !important;
+    padding: 9px 12px;
+    font-size: 0.4rem !important;
     gap: 4px;
   }
   
   .boton i, .boton-secundario i {
-    font-size: 0.2rem !important;
+    font-size: 0.4rem !important;
   }
   
   .main-content {
-    padding-top: 80px;
+    padding-top: 70px;
   }
   
   .hero-content h1 {
