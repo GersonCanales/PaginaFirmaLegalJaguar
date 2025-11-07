@@ -100,15 +100,27 @@ header nav ul li a:hover {
 
 @media (max-width: 600px) {
   .botones-principal-top {
-    flex-direction: column; /* botones apilados en móvil */
-    gap: 6px;
-    top: 10px;
+    display: flex;
+    flex-direction: row; /* ahora en horizontal */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    top: 10px; /* puedes moverlo más arriba o abajo si quieres */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 8px 0;
+    z-index: 1000;
   }
+
   .boton, .boton-secundario {
-    padding: 10px 10px;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    border-radius: 8px;
   }
 }
+
 
 .botones-principal-top a {
   text-decoration: none;
