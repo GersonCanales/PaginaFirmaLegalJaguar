@@ -422,10 +422,10 @@ footer .redes a {
   .botones-principal-top a:nth-child(6) { grid-column: 3 / 5; grid-row: 2 / 3; }
   .botones-principal-top a:nth-child(7) { grid-column: 1 / 5; grid-row: 3 / 4; }
   
-  /* BOTONES MÁS ANCHOS EN VERTICAL */
+  /* BOTONES MÁS ANCHOS EN VERTICAL - TEXTO MÁS LEGIBLE */
   .boton, .boton-secundario {
-    padding: 7px 5px;
-    font-size: 0.4rem !important; /* Texto un poco más grande */
+    padding: 8px 4px;
+    font-size: 0.5rem !important; /* Texto más grande para mejor legibilidad */
     gap: 3px;
     white-space: nowrap;
     min-width: auto;
@@ -437,12 +437,14 @@ footer .redes a {
     justify-content: center;
     width: 100%;
     line-height: 1.1;
-    letter-spacing: 0px; /* Espaciado normal */
+    letter-spacing: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   /* CONTÁCTANOS más ancho */
   .botones-principal-top a:nth-child(7) .boton-secundario {
-    font-size: 0.65rem !important;
+    font-size: 0.7rem !important;
     padding: 10px 6px;
   }
   
@@ -490,7 +492,20 @@ footer .redes a {
     min-height: 70vh;
   }
   
-  /* Resto se mantiene igual */
+  /* TRES FOTOS MÁS PEQUEÑAS EN VERTICAL */
+  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
+    width: 45px !important; /* Más pequeñas */
+    height: 45px !important; /* Más pequeñas */
+  }
+  
+  .jaguar-logo-alt {
+    bottom: 60px !important; /* Menos separación */
+  }
+  
+  .jaguar-logo-extra {
+    bottom: 110px !important; /* Menos separación */
+  }
+  
   .logo-img {
     max-width: 120px;
   }
@@ -519,10 +534,10 @@ footer .redes a {
     left: 50%;
     transform: translateX(-50%);
     flex-direction: row;
-    gap: 8px;
+    gap: 10px; /* Más separación entre botones */
     z-index: 5;
     background: rgba(0, 0, 0, 0.9);
-    padding: 10px 20px;
+    padding: 12px 24px; /* Más padding */
     border-radius: 30px;
     backdrop-filter: blur(15px);
     border: 2px solid rgba(197, 163, 63, 0.3);
@@ -533,10 +548,10 @@ footer .redes a {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   }
   
-  /* BOTONES MÁS GRANDES EN HORIZONTAL */
+  /* BOTONES MÁS GRANDES EN HORIZONTAL - MEJOR LEGIBILIDAD */
   .boton, .boton-secundario {
-    padding: 10px 14px;
-    font-size: 0.8rem !important; /* Texto más grande */
+    padding: 10px 12px;
+    font-size: 0.75rem !important; /* Texto optimizado */
     gap: 5px;
     white-space: nowrap;
     min-width: auto;
@@ -546,6 +561,8 @@ footer .redes a {
     transition: all 0.3s ease;
     line-height: 1.2;
     letter-spacing: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   /* Botones primarios */
@@ -579,7 +596,7 @@ footer .redes a {
   
   /* Iconos más grandes */
   .boton i, .boton-secundario i {
-    font-size: 0.9rem !important;
+    font-size: 0.85rem !important;
     transition: transform 0.3s;
   }
   
@@ -592,6 +609,25 @@ footer .redes a {
     min-height: 60vh;
   }
   
+  /* LOGO MÁS GRANDE EN HORIZONTAL */
+  .logo-img {
+    max-width: 140px !important; /* Logo más grande */
+  }
+  
+  /* TRES FOTOS MÁS SEPARADAS EN HORIZONTAL */
+  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
+    width: 70px !important; /* Más grandes */
+    height: 70px !important; /* Más grandes */
+  }
+  
+  .jaguar-logo-alt {
+    bottom: 80px !important; /* Más separación */
+  }
+  
+  .jaguar-logo-extra {
+    bottom: 150px !important; /* Más separación */
+  }
+  
   .hero-content h1 {
     font-size: 2rem;
     top: 25px;
@@ -601,45 +637,46 @@ footer .redes a {
     font-size: 1.1rem;
     margin-top: 100px;
   }
-  
-  .logo-img {
-    max-width: 120px;
-  }
-  
-  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .jaguar-logo-alt {
-    bottom: 70px;
-  }
-  
-  .jaguar-logo-extra {
-    bottom: 130px;
-  }
 }
 
 /* ===== TELÉFONOS HORIZONTALES MÁS PEQUEÑOS ===== */
 @media (max-width: 700px) and (orientation: landscape) and (max-height: 400px) {
   .botones-principal-top {
     top: 8px;
-    padding: 6px 12px; /* Más padding para botones más grandes */
-    gap: 5px;
+    padding: 8px 16px; /* Más padding para botones más grandes */
+    gap: 6px;
   }
   
   .boton, .boton-secundario {
-    padding: 7px 10px; /* Botones más grandes */
-    font-size: 0.45rem !important; /* Texto más pequeño */
+    padding: 8px 10px; /* Botones más grandes */
+    font-size: 0.5rem !important; /* Texto optimizado */
     gap: 3px;
   }
   
   .boton i, .boton-secundario i {
-    font-size: 0.5rem !important; /* Iconos más pequeños */
+    font-size: 0.6rem !important; /* Iconos más pequeños */
   }
   
   .main-content {
     padding-top: 75px; /* Un poco más de espacio */
+  }
+  
+  /* LOGO Y FOTOS AJUSTADOS */
+  .logo-img {
+    max-width: 100px !important;
+  }
+  
+  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  
+  .jaguar-logo-alt {
+    bottom: 60px !important;
+  }
+  
+  .jaguar-logo-extra {
+    bottom: 110px !important;
   }
   
   .hero-content h1 {
@@ -656,21 +693,35 @@ footer .redes a {
 /* ===== TELÉFONOS MUY PEQUEÑOS ===== */
 @media (max-width: 350px) and (orientation: portrait) {
   .botones-principal-top {
-    padding: 4px 8px;
-    gap: 3px;
+    padding: 6px 10px;
+    gap: 4px;
   }
   
   .boton, .boton-secundario {
-    padding: 4px 2px;
-    font-size: 0.4rem !important; /* AÚN MÁS PEQUEÑO */
-    letter-spacing: -0.3px;
+    padding: 6px 3px;
+    font-size: 0.45rem !important; /* Texto más legible */
+    letter-spacing: -0.2px;
   }
   
   .boton i, .boton-secundario i {
-    font-size: 0.45rem !important;
+    font-size: 0.5rem !important;
   }
   
   .main-content {
     padding-top: 110px;
+  }
+  
+  /* FOTOS AÚN MÁS PEQUEÑAS EN PANTALLAS MUY PEQUEÑAS */
+  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .jaguar-logo-alt {
+    bottom: 50px !important;
+  }
+  
+  .jaguar-logo-extra {
+    bottom: 90px !important;
   }
 }
