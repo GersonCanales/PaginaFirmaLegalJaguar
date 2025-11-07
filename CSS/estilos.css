@@ -492,7 +492,7 @@ footer .redes a {
   
   /* Resto se mantiene igual */
   .logo-img {
-    max-width: 100px;
+    max-width: 120px;
   }
   
   .hero-content h1 {
@@ -502,7 +502,7 @@ footer .redes a {
   
   .hero-content p {
     font-size: 1.05rem;
-    margin-top: 140px;
+    margin-top: 110px;
   }
 }
 
