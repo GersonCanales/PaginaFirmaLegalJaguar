@@ -422,10 +422,10 @@ footer .redes a {
   .botones-principal-top a:nth-child(6) { grid-column: 3 / 5; grid-row: 2 / 3; }
   .botones-principal-top a:nth-child(7) { grid-column: 1 / 5; grid-row: 3 / 4; }
   
-  /* BOTONES MÁS ANCHOS EN VERTICAL - TEXTO MÁS LEGIBLE */
+  /* BOTONES MÁS ANCHOS EN VERTICAL - MANTENIENDO TAMAÑO ORIGINAL */
   .boton, .boton-secundario {
-    padding: 8px 4px;
-    font-size: 0.5rem !important; /* Texto más grande para mejor legibilidad */
+    padding: 7px 5px;
+    font-size: 0.4rem !important; /* Manteniendo tamaño original */
     gap: 3px;
     white-space: nowrap;
     min-width: auto;
@@ -438,13 +438,11 @@ footer .redes a {
     width: 100%;
     line-height: 1.1;
     letter-spacing: 0px;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
   
   /* CONTÁCTANOS más ancho */
   .botones-principal-top a:nth-child(7) .boton-secundario {
-    font-size: 0.7rem !important;
+    font-size: 0.65rem !important;
     padding: 10px 6px;
   }
   
@@ -534,10 +532,10 @@ footer .redes a {
     left: 50%;
     transform: translateX(-50%);
     flex-direction: row;
-    gap: 10px; /* Más separación entre botones */
+    gap: 8px; /* Manteniendo separación original */
     z-index: 5;
     background: rgba(0, 0, 0, 0.9);
-    padding: 12px 24px; /* Más padding */
+    padding: 10px 20px;
     border-radius: 30px;
     backdrop-filter: blur(15px);
     border: 2px solid rgba(197, 163, 63, 0.3);
@@ -548,21 +546,55 @@ footer .redes a {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   }
   
-  /* BOTONES MÁS GRANDES EN HORIZONTAL - MEJOR LEGIBILIDAD */
+  /* BOTONES MÁS PEQUEÑOS EN HORIZONTAL PARA QUE QUEPAN MEJOR */
   .boton, .boton-secundario {
-    padding: 10px 12px;
-    font-size: 0.75rem !important; /* Texto optimizado */
-    gap: 5px;
+    padding: 8px 10px; /* Reducido el padding */
+    font-size: 0.65rem !important; /* Texto más pequeño */
+    gap: 4px;
     white-space: nowrap;
     min-width: auto;
-    border-radius: 25px;
+    border-radius: 20px;
     font-weight: 700;
     text-transform: uppercase;
     transition: all 0.3s ease;
-    line-height: 1.2;
+    line-height: 1.1;
     letter-spacing: 0px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    text-align: center;
+  }
+  
+  /* ESPECIAL PARA "SOBRE NOSOTR" - DIVIDIR EN DOS LÍNEAS */
+  .botones-principal-top a:nth-child(1) .boton,
+  .botones-principal-top a:nth-child(1) .boton-secundario {
+    white-space: normal !important;
+    line-height: 1 !important;
+    padding: 6px 8px !important;
+  }
+  
+  .botones-principal-top a:nth-child(1) .boton::after,
+  .botones-principal-top a:nth-child(1) .boton-secundario::after {
+    content: "NOSOTR";
+    display: block;
+    font-size: 0.6rem;
+    margin-top: -2px;
+  }
+  
+  .botones-principal-top a:nth-child(1) .boton::before,
+  .botones-principal-top a:nth-child(1) .boton-secundario::before {
+    content: "SOBRE";
+    display: block;
+    font-size: 0.6rem;
+  }
+  
+  /* OCULTAR TEXTO ORIGINAL DE "SOBRE NOSOTR" */
+  .botones-principal-top a:nth-child(1) .boton span,
+  .botones-principal-top a:nth-child(1) .boton-secundario span {
+    display: none !important;
+  }
+  
+  /* CONTÁCTANOS más pequeño */
+  .botones-principal-top a:nth-child(7) .boton-secundario {
+    font-size: 0.7rem !important;
+    padding: 9px 12px;
   }
   
   /* Botones primarios */
@@ -594,9 +626,9 @@ footer .redes a {
     transform: translateY(-2px) scale(1.04);
   }
   
-  /* Iconos más grandes */
+  /* Iconos más pequeños */
   .boton i, .boton-secundario i {
-    font-size: 0.85rem !important;
+    font-size: 0.75rem !important;
     transition: transform 0.3s;
   }
   
@@ -605,7 +637,7 @@ footer .redes a {
   }
   
   .main-content {
-    padding-top: 90px; /* Más espacio para botones más grandes */
+    padding-top: 85px; /* Menos espacio para botones más pequeños */
     min-height: 60vh;
   }
   
@@ -643,22 +675,35 @@ footer .redes a {
 @media (max-width: 700px) and (orientation: landscape) and (max-height: 400px) {
   .botones-principal-top {
     top: 8px;
-    padding: 8px 16px; /* Más padding para botones más grandes */
-    gap: 6px;
+    padding: 6px 12px;
+    gap: 5px;
   }
   
   .boton, .boton-secundario {
-    padding: 8px 10px; /* Botones más grandes */
-    font-size: 0.5rem !important; /* Texto optimizado */
+    padding: 6px 8px; /* Botones más pequeños */
+    font-size: 0.5rem !important; /* Texto más pequeño */
     gap: 3px;
   }
   
+  /* AJUSTES PARA "SOBRE NOSOTR" EN PANTALLAS MÁS PEQUEÑAS */
+  .botones-principal-top a:nth-child(1) .boton,
+  .botones-principal-top a:nth-child(1) .boton-secundario {
+    padding: 4px 6px !important;
+  }
+  
+  .botones-principal-top a:nth-child(1) .boton::before,
+  .botones-principal-top a:nth-child(1) .boton-secundario::before,
+  .botones-principal-top a:nth-child(1) .boton::after,
+  .botones-principal-top a:nth-child(1) .boton-secundario::after {
+    font-size: 0.5rem !important;
+  }
+  
   .boton i, .boton-secundario i {
-    font-size: 0.6rem !important; /* Iconos más pequeños */
+    font-size: 0.5rem !important; /* Iconos más pequeños */
   }
   
   .main-content {
-    padding-top: 75px; /* Un poco más de espacio */
+    padding-top: 70px; /* Menos espacio */
   }
   
   /* LOGO Y FOTOS AJUSTADOS */
@@ -693,18 +738,18 @@ footer .redes a {
 /* ===== TELÉFONOS MUY PEQUEÑOS ===== */
 @media (max-width: 350px) and (orientation: portrait) {
   .botones-principal-top {
-    padding: 6px 10px;
-    gap: 4px;
+    padding: 4px 8px;
+    gap: 3px;
   }
   
   .boton, .boton-secundario {
-    padding: 6px 3px;
-    font-size: 0.45rem !important; /* Texto más legible */
-    letter-spacing: -0.2px;
+    padding: 4px 2px;
+    font-size: 0.4rem !important;
+    letter-spacing: -0.3px;
   }
   
   .boton i, .boton-secundario i {
-    font-size: 0.5rem !important;
+    font-size: 0.45rem !important;
   }
   
   .main-content {
