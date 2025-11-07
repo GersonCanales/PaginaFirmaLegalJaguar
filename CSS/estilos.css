@@ -624,7 +624,7 @@ footer .redes a {
 @media (max-width: 700px) and (orientation: landscape) and (max-height: 400px) {
   .botones-principal-top {
     top: 9px;
-    padding: 8px 12px;
+    padding: 5px 10px;
     gap: 6px;
   }
   
