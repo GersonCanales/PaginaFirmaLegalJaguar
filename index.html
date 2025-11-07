@@ -9,45 +9,27 @@
     <link rel="stylesheet" href="CSS/estilos.css">
 </head>
 
-
 <body>
-
-<script>
-// Menú hamburguesa solo para móviles
-document.getElementById('hamburger')?.addEventListener('click', function() {
-    this.classList.toggle('active');
-    document.getElementById('mobileMenu').classList.toggle('active');
-});
-
-// Cerrar menú al hacer clic en un enlace
-document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', function() {
-        document.getElementById('hamburger').classList.remove('active');
-        document.getElementById('mobileMenu').classList.remove('active');
-    });
-});
-</script>
-
-    <!-- Menú móvil (solo visible en teléfonos) -->
-<div class="header-mobile">
-    <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+    <!-- Menú móvil (solo visible en teléfonos vertical) -->
+    <div class="header-mobile">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
+            <a href="#SobreNosotros"><i class="fas fa-file-alt"></i> Sobre Nosotros</a>
+            <a href="#mision"><i class="fas fa-bullseye"></i> Misión</a>
+            <a href="#vision"><i class="fas fa-eye"></i> Visión</a>
+            <a href="alianzas.html"><i class="fas fa-handshake"></i> Alianzas</a>
+            <a href="servicios.html"><i class="fas fa-briefcase"></i> Servicios</a>
+            <a href="contacto.html"><i class="fas fa-envelope"></i> Contáctanos</a>
+        </div>
     </div>
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#SobreNosotros"><i class="fas fa-file-alt"></i> Sobre Nosotros</a>
-        <a href="#mision"><i class="fas fa-bullseye"></i> Misión</a>
-        <a href="#vision"><i class="fas fa-eye"></i> Visión</a>
-        <a href="alianzas.html"><i class="fas fa-handshake"></i> Alianzas</a>
-        <a href="servicios.html"><i class="fas fa-briefcase"></i> Servicios</a>
-        <a href="contacto.html"><i class="fas fa-envelope"></i> Contáctanos</a>
-    </div>
-</div>
 
     <!-- Main con botones, logo y video de fondo -->
-        <main class="main-content" id="inicio">
+    <main class="main-content" id="inicio">
 
         <!-- Botones principales arriba -->
         <div class="botones-principal-top">
@@ -60,32 +42,29 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
             <a href="contacto.html" class="boton-secundario"><i class="fas fa-envelope"></i> Contáctanos</a>
         </div>
 
-            <!--  Banner hero agregado sin cambiar tu estructura -->
-    <section class="hero-banner">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Firma Legal Jaguar</h1>
-            <p>Justicia, Dignidad y Lealtad</p>
-        </div>
+        <!-- Banner hero -->
+        <section class="hero-banner">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Firma Legal Jaguar</h1>
+                <p>Justicia, Dignidad y Lealtad</p>
+            </div>
 
-        <!-- Jaguar como logotipo circular -->
-<div class="jaguar-logo">
-    <img src="IMG/Jaguar2.jpg" alt="Jaguar Logo">
-</div>
+            <!-- Jaguar como logotipo circular -->
+            <div class="jaguar-logo">
+                <img src="IMG/Jaguar2.jpg" alt="Jaguar Logo">
+            </div>
 
-<!-- 🔹 Nuevo logo adicional más arriba -->
-<div class="jaguar-logo-alt">
-    <img src="IMG/Arboles.jpeg" alt="Logo Alternativo">
-</div>
+            <!-- Nuevo logo adicional más arriba -->
+            <div class="jaguar-logo-alt">
+                <img src="IMG/Arboles.jpeg" alt="Logo Alternativo">
+            </div>
 
-<!-- 🔹 Tercer logo adicional -->
-<div class="jaguar-logo-extra">
-    <img src="IMG/Martillo de Justicia.jpeg" alt="Logo Extra 2">
-</div>
-
-
-
-    </section>
+            <!-- Tercer logo adicional -->
+            <div class="jaguar-logo-extra">
+                <img src="IMG/Martillo de Justicia.jpeg" alt="Logo Extra 2">
+            </div>
+        </section>
 
         <!-- Video de fondo -->
         <div class="background-video">
@@ -109,19 +88,16 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
     </main>
 
     <!-- Secciones que aparecen al bajar -->
-
     <div class="fondo-secciones">
         <section id="SobreNosotros" class="section-info info-card">
             <h2>Sobre Nosotros</h2>
             <p>
                 Firma Legal Jaguar 
-Es una una Firma Legal comprometida con el ejercicio de la acción privada, en defensa de los derechos legítimos de nuestros clientes, 
-con una metodología de estudio de caso que nos permite evaluar a detalle todos los aspectos internos y externos del caso, obteniendo como resultado una estrategia técnica de abordaje específica.
- Esto nos permite informar al cliente de manera oportuna de la condición en que se encuentra su situación legal, los caminos procesales a seguir y los posibles alcances y salidas legales.
-Nuestros enfoques, DERECHO, SOCIEDAD Y AMBIENTE 
-Con alianzas estratégicas con especialistas en diferentes áreas tanto a lo interno del derecho como de ciencias auxiliares el abordaje es integral dando así resultados revestido de absoluta legalidad y seguridad jurídica.
-            </p>
-
+                Es una una Firma Legal comprometida con el ejercicio de la acción privada, en defensa de los derechos legítimos de nuestros clientes, 
+                con una metodología de estudio de caso que nos permite evaluar a detalle todos los aspectos internos y externos del caso, obteniendo como resultado una estrategia técnica de abordaje específica.
+                Esto nos permite informar al cliente de manera oportuna de la condición en que se encuentra su situación legal, los caminos procesales a seguir y los posibles alcances y salidas legales.
+                Nuestros enfoques, DERECHO, SOCIEDAD Y AMBIENTE 
+                Con alianzas estratégicas con especialistas en diferentes áreas tanto a lo interno del derecho como de ciencias auxiliares el abordaje es integral dando así resultados revestido de absoluta legalidad y seguridad jurídica.
             </p>
         </section>
 
@@ -149,5 +125,28 @@ Con alianzas estratégicas con especialistas en diferentes áreas tanto a lo int
         <p>&copy; 2025 Firma Legal Jaguar – Todos los derechos reservados.</p>
     </footer>
 
+    <!-- JavaScript al final del body -->
+    <script>
+    // Menú hamburguesa para móviles
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (hamburger && mobileMenu) {
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+            
+            // Cerrar menú al hacer clic en un enlace
+            document.querySelectorAll('.mobile-menu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+    });
+    </script>
 </body>
 </html>
