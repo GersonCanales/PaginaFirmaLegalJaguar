@@ -407,18 +407,26 @@ footer .redes a {
   
   .hamburger {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     cursor: pointer;
-    width: 30px;
+    gap: 12px;
   }
   
   .hamburger span {
-    width: 100%;
+    width: 25px;
     height: 3px;
     background: var(--dorado-jaguar);
     margin: 3px 0;
     transition: 0.3s;
     border-radius: 2px;
+  }
+  
+  /* SOLO AGREGAR ESTO - Mensaje "MENÚ" */
+  .hamburger::after {
+    content: "MENÚ";
+    color: var(--dorado-jaguar);
+    font-weight: bold;
+    font-size: 1.1rem;
   }
   
   .hamburger.active span:nth-child(1) {
@@ -433,47 +441,7 @@ footer .redes a {
     transform: rotate(-45deg) translate(6px, -6px);
   }
   
-  .mobile-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.98);
-    padding: 15px 0;
-    z-index: 999;
-    border-top: 1px solid var(--verde-jaguar);
-  }
-  
-  .mobile-menu.active {
-    display: block;
-  }
-  
-  .mobile-menu a {
-    display: flex;
-    align-items: center;
-    color: var(--blanco);
-    text-decoration: none;
-    padding: 14px 20px;
-    font-size: 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.3s;
-  }
-  
-  .mobile-menu a:hover {
-    background: var(--verde-jaguar);
-    padding-left: 25px;
-  }
-  
-  .mobile-menu a i {
-    margin-right: 12px;
-    width: 20px;
-    text-align: center;
-    font-size: 1.1rem;
-    color: var(--dorado-jaguar);
-  }
-  
-  /* Ajustes de contenido para móvil vertical */
+  /* El resto de tu CSS para vertical se mantiene igual */
   .main-content {
     padding-top: 80px;
     min-height: 70vh;
@@ -482,6 +450,7 @@ footer .redes a {
   .logo-img {
     max-width: 150px;
   }
+  
   
   .curva-verde {
     width: 70vw;
@@ -538,7 +507,7 @@ footer .redes a {
   }
 }
 
-/* ===== TELÉFONOS EN HORIZONTAL (Landscape) - BOTONES COMO PC ===== */
+/* ===== TELÉFONOS EN HORIZONTAL (Landscape) ===== */
 @media (max-width: 900px) and (orientation: landscape) {
   /* OCULTAR menú hamburguesa y MOSTRAR botones normales */
   .header-mobile {
@@ -548,94 +517,72 @@ footer .redes a {
   .botones-principal-top {
     display: flex !important;
     position: fixed;
-    top: 20px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     flex-direction: row;
-    gap: 12px;
+    gap: 4px; /* Reducir espacio entre botones */
     z-index: 5;
-    background: rgba(0, 0, 0, 0.9);
-    padding: 12px 20px;
-    border-radius: 50px;
-    backdrop-filter: blur(15px);
-    border: 2px solid rgba(197, 163, 63, 0.3);
+    background: rgba(0, 0, 0, 0.85);
+    padding: 6px 12px; /* Reducir padding */
+    border-radius: 40px;
+    backdrop-filter: blur(10px);
     width: auto;
-    max-width: 90%;
-    flex-wrap: nowrap;
+    max-width: 95%;
+    flex-wrap: wrap;
     justify-content: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   }
   
+  /* BOTONES MÁS COMPACTOS */
   .boton, .boton-secundario {
-    padding: 12px 18px;
-    font-size: 0.9rem;
-    gap: 8px;
+    padding: 6px 10px; /* Más compacto */
+    font-size: 0.7rem; /* Texto más pequeño */
+    gap: 4px; /* Menos espacio entre icono y texto */
     white-space: nowrap;
     min-width: auto;
-    transition: all 0.3s ease;
-    border-radius: 50px;
-    font-weight: 700;
-    text-transform: uppercase;
   }
   
-  /* Botones primarios - igual que PC */
-  .boton {
-    color: var(--blanco);
-    background: linear-gradient(135deg, #007a45, #c5a33f);
-    border: none;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-  }
-  
-  .boton:hover {
-    background: linear-gradient(135deg, #c5a33f, #007a45);
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  }
-  
-  /* Botones secundarios - igual que PC */
-  .boton-secundario {
-    color: #007a45;
-    background: var(--blanco);
-    border: 2px solid #007a45;
-    box-shadow: 0 6px 15px rgba(0,107,60,0.15);
-  }
-  
-  .boton-secundario:hover {
-    background: #007a45;
-    color: var(--blanco);
-    border-color: #c5a33f;
-    transform: translateY(-3px) scale(1.05);
-  }
-  
-  /* Iconos con efectos igual que PC */
+  /* ICONOS MÁS PEQUEÑOS */
   .boton i, .boton-secundario i {
-    font-size: 1.1rem;
-    transition: transform 0.3s;
+    font-size: 0.8rem; /* Iconos más pequeños */
   }
   
-  .boton:hover i, .boton-secundario:hover i {
-    transform: translateX(4px);
+  /* OPCIONAL: Ocultar texto en botones muy largos y solo mostrar iconos */
+  @media (max-width: 700px) and (orientation: landscape) {
+    .boton span, .boton-secundario span {
+      display: none; /* Ocultar texto, solo mostrar iconos */
+    }
+    
+    .boton, .boton-secundario {
+      padding: 8px 10px; /* Ajustar para solo iconos */
+      font-size: 0; /* Ocultar texto */
+    }
+    
+    .boton i, .boton-secundario i {
+      font-size: 1rem; /* Iconos visibles */
+      margin: 0;
+    }
   }
   
-  /* Ajustes de contenido para horizontal */
   .main-content {
-    padding-top: 120px;
+    padding-top: 80px; /* Menos espacio arriba */
     min-height: 60vh;
   }
   
   .hero-content h1 {
-    font-size: 2.2rem;
-    top: 40px;
+    font-size: 1.8rem; /* Texto más pequeño */
+    top: 20px;
   }
   
   .hero-content p {
-    font-size: 1.2rem;
-    margin-top: 140px;
+    font-size: 1rem; /* Texto más pequeño */
+    margin-top: 100px;
   }
   
   .logo-img {
-    max-width: 180px;
+    max-width: 120px; /* Logo más pequeño */
   }
+}
   
   .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
     width: 70px;
@@ -649,7 +596,6 @@ footer .redes a {
   .jaguar-logo-extra {
     bottom: 170px;
   }
-}
 
 /* ===== TELÉFONOS HORIZONTALES MÁS PEQUEÑOS ===== */
 @media (max-width: 700px) and (orientation: landscape) and (max-height: 400px) {
