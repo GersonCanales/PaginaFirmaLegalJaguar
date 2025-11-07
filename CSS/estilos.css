@@ -386,7 +386,7 @@ footer .redes a {
   }
 }
 
-/* ===== TELÉFONOS EN VERTICAL (Portrait) - TEXTO MUY PEQUEÑO ===== */
+/* ===== TELÉFONOS EN VERTICAL (Portrait) - BOTONES MÁS ANCHOS ===== */
 @media (max-width: 600px) and (orientation: portrait) {
   /* OCULTAR menú hamburguesa y MOSTRAR botones normales */
   .header-mobile {
@@ -401,15 +401,15 @@ footer .redes a {
     transform: translateX(-50%);
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, auto);
-    gap: 4px;
+    gap: 6px;
     z-index: 5;
     background: rgba(0, 0, 0, 0.9);
-    padding: 6px 10px;
-    border-radius: 12px;
+    padding: 8px 12px;
+    border-radius: 15px;
     backdrop-filter: blur(15px);
     border: 2px solid rgba(197, 163, 63, 0.3);
-    width: 96%;
-    max-width: 96%;
+    width: 95%;
+    max-width: 95%;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   }
   
@@ -422,27 +422,28 @@ footer .redes a {
   .botones-principal-top a:nth-child(6) { grid-column: 3 / 5; grid-row: 2 / 3; }
   .botones-principal-top a:nth-child(7) { grid-column: 1 / 5; grid-row: 3 / 4; }
   
-  /* TEXTO EXTREMADAMENTE PEQUEÑO PERO LEGIBLE */
+  /* BOTONES MÁS ANCHOS EN VERTICAL */
   .boton, .boton-secundario {
-    padding: 5px 3px;
-    font-size: 0.45rem !important; /* TEXTO MUY PEQUEÑO */
-    gap: 1px;
+    padding: 8px 6px;
+    font-size: 0.6rem !important; /* Texto un poco más grande */
+    gap: 3px;
     white-space: nowrap;
     min-width: auto;
-    border-radius: 15px;
+    border-radius: 18px;
     font-weight: 700;
     text-transform: uppercase;
     transition: all 0.3s ease;
     text-align: center;
     justify-content: center;
     width: 100%;
-    line-height: 1;
-    letter-spacing: -0.2px; /* Compactar letras */
+    line-height: 1.1;
+    letter-spacing: 0px; /* Espaciado normal */
   }
   
-  /* CONTÁCTANOS un poco más grande */
+  /* CONTÁCTANOS más ancho */
   .botones-principal-top a:nth-child(7) .boton-secundario {
-    font-size: 0.5rem !important;
+    font-size: 0.65rem !important;
+    padding: 10px 6px;
   }
   
   /* Botones primarios */
@@ -450,75 +451,62 @@ footer .redes a {
     color: var(--blanco);
     background: linear-gradient(135deg, #007a45, #c5a33f);
     border: none;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
   }
   
   .boton:hover {
     background: linear-gradient(135deg, #c5a33f, #007a45);
-    transform: translateY(-1px) scale(1.02);
-    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   }
   
   /* Botones secundarios */
   .boton-secundario {
     color: #007a45;
     background: var(--blanco);
-    border: 1px solid #007a45;
-    box-shadow: 0 1px 4px rgba(0,107,60,0.15);
+    border: 1.5px solid #007a45;
+    box-shadow: 0 2px 6px rgba(0,107,60,0.15);
   }
   
   .boton-secundario:hover {
     background: #007a45;
     color: var(--blanco);
     border-color: #c5a33f;
-    transform: translateY(-1px) scale(1.02);
+    transform: translateY(-2px) scale(1.03);
   }
   
-  /* Iconos extremadamente pequeños */
+  /* Iconos más grandes */
   .boton i, .boton-secundario i {
-    font-size: 0.5rem !important;
+    font-size: 0.7rem !important;
     transition: transform 0.3s;
   }
   
   .boton:hover i, .boton-secundario:hover i {
-    transform: translateX(1px);
+    transform: translateX(2px);
   }
   
   .main-content {
-    padding-top: 120px;
+    padding-top: 140px; /* Más espacio para botones más grandes */
     min-height: 70vh;
   }
   
-  /* Ajustes adicionales para hacer más espacio */
+  /* Resto se mantiene igual */
   .logo-img {
-    max-width: 130px;
+    max-width: 140px;
   }
   
   .hero-content h1 {
-    font-size: 1.8rem;
-    top: 30px;
+    font-size: 1.9rem;
+    top: 35px;
   }
   
   .hero-content p {
-    font-size: 1rem;
-    margin-top: 130px;
-  }
-  
-  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
-    width: 70px;
-    height: 70px;
-  }
-  
-  .jaguar-logo-alt {
-    bottom: 90px;
-  }
-  
-  .jaguar-logo-extra {
-    bottom: 160px;
+    font-size: 1.05rem;
+    margin-top: 140px;
   }
 }
 
-/* ===== TELÉFONOS EN HORIZONTAL (Landscape) - TEXTO EXTREMADAMENTE PEQUEÑO ===== */
+/* ===== TELÉFONOS EN HORIZONTAL (Landscape) - BOTONES MÁS GRANDES ===== */
 @media (max-width: 900px) and (orientation: landscape) {
   .header-mobile {
     display: none !important;
@@ -527,37 +515,37 @@ footer .redes a {
   .botones-principal-top {
     display: flex !important;
     position: fixed;
-    top: 4px;
+    top: 12px;
     left: 50%;
     transform: translateX(-50%);
     flex-direction: row;
-    gap: 2px;
+    gap: 8px;
     z-index: 5;
     background: rgba(0, 0, 0, 0.9);
-    padding: 3px 6px;
-    border-radius: 20px;
+    padding: 10px 20px;
+    border-radius: 30px;
     backdrop-filter: blur(15px);
     border: 2px solid rgba(197, 163, 63, 0.3);
     width: auto;
-    max-width: 99%;
+    max-width: 95%;
     flex-wrap: nowrap;
     justify-content: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   }
   
-  /* TEXTO EXTREMADAMENTE PEQUEÑO PARA HORIZONTAL */
+  /* BOTONES MÁS GRANDES EN HORIZONTAL */
   .boton, .boton-secundario {
-    padding: 3px 4px;
-    font-size: 0.4rem !important; /* TEXTO MUY PEQUEÑO */
-    gap: 1px;
+    padding: 10px 14px;
+    font-size: 0.8rem !important; /* Texto más grande */
+    gap: 5px;
     white-space: nowrap;
     min-width: auto;
-    border-radius: 12px;
+    border-radius: 25px;
     font-weight: 700;
     text-transform: uppercase;
     transition: all 0.3s ease;
-    line-height: 1;
-    letter-spacing: -0.3px;
+    line-height: 1.2;
+    letter-spacing: 0px;
   }
   
   /* Botones primarios */
@@ -565,70 +553,103 @@ footer .redes a {
     color: var(--blanco);
     background: linear-gradient(135deg, #007a45, #c5a33f);
     border: none;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
   }
   
   .boton:hover {
     background: linear-gradient(135deg, #c5a33f, #007a45);
-    transform: translateY(-1px) scale(1.01);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.3);
   }
   
   /* Botones secundarios */
   .boton-secundario {
     color: #007a45;
     background: var(--blanco);
-    border: 0.8px solid #007a45;
-    box-shadow: 0 1px 3px rgba(0,107,60,0.15);
+    border: 2px solid #007a45;
+    box-shadow: 0 3px 8px rgba(0,107,60,0.15);
   }
   
   .boton-secundario:hover {
     background: #007a45;
     color: var(--blanco);
     border-color: #c5a33f;
-    transform: translateY(-1px) scale(1.01);
+    transform: translateY(-2px) scale(1.04);
   }
   
-  /* Iconos extremadamente pequeños */
+  /* Iconos más grandes */
   .boton i, .boton-secundario i {
-    font-size: 0.45rem !important;
+    font-size: 0.9rem !important;
     transition: transform 0.3s;
   }
   
   .boton:hover i, .boton-secundario:hover i {
-    transform: translateX(0.5px);
+    transform: translateX(3px);
   }
   
   .main-content {
-    padding-top: 50px;
+    padding-top: 90px; /* Más espacio para botones más grandes */
     min-height: 60vh;
   }
   
   .hero-content h1 {
-    font-size: 1.3rem;
-    top: 8px;
+    font-size: 2rem;
+    top: 25px;
   }
   
   .hero-content p {
-    font-size: 0.8rem;
-    margin-top: 60px;
+    font-size: 1.1rem;
+    margin-top: 100px;
   }
   
   .logo-img {
-    max-width: 80px;
+    max-width: 120px;
   }
   
   .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
   }
   
   .jaguar-logo-alt {
-    bottom: 55px;
+    bottom: 70px;
   }
   
   .jaguar-logo-extra {
-    bottom: 100px;
+    bottom: 130px;
+  }
+}
+
+/* ===== TELÉFONOS HORIZONTALES MÁS PEQUEÑOS ===== */
+@media (max-width: 700px) and (orientation: landscape) and (max-height: 400px) {
+  .botones-principal-top {
+    top: 8px;
+    padding: 8px 15px;
+    gap: 6px;
+  }
+  
+  .boton, .boton-secundario {
+    padding: 8px 12px;
+    font-size: 0.7rem !important;
+    gap: 4px;
+  }
+  
+  .boton i, .boton-secundario i {
+    font-size: 0.8rem !important;
+  }
+  
+  .main-content {
+    padding-top: 70px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.6rem;
+    top: 15px;
+  }
+  
+  .hero-content p {
+    font-size: 0.9rem;
+    margin-top: 80px;
   }
 }
 
