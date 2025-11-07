@@ -625,19 +625,20 @@ footer .redes a {
   .botones-principal-top {
     top: 9px;
     padding: 5px 10px;
-    gap: 6px;
+    gap: 4px; /* Cambia de 6px a 4px */
   }
   
   .boton, .boton-secundario {
-    padding: 9px 12px;
-    font-size: 0.4rem !important;
-    gap: 4px;
+    padding: 6px 8px; /* Cambia de 9px 12px a 6px 8px */
+    font-size: 0.5rem !important; /* Cambia de 0.4rem a 0.5rem */
+    gap: 3px; /* Cambia de 4px a 3px */
   }
   
   .boton i, .boton-secundario i {
-    font-size: 0.4rem !important;
+    font-size: 0.55rem !important; /* Cambia de 0.4rem a 0.55rem */
   }
   
+  /* El resto se mantiene igual */
   .main-content {
     padding-top: 70px;
   }
