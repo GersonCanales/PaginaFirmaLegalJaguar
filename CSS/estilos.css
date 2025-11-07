@@ -630,12 +630,12 @@ footer .redes a {
   
   .boton, .boton-secundario {
     padding: 8px 12px;
-    font-size: 0.5rem !important;
+    font-size: 0.8rem !important;
     gap: 4px;
   }
   
   .boton i, .boton-secundario i {
-    font-size: 0.5rem !important;
+    font-size: 0.4rem !important;
   }
   
   .main-content {
