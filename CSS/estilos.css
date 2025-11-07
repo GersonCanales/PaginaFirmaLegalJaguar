@@ -413,19 +413,24 @@ footer .redes a {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   }
   
-  /* ORDEN DE LOS BOTONES */
-  .botones-principal-top a:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 2; }
-  .botones-principal-top a:nth-child(2) { grid-column: 2 / 3; grid-row: 1 / 2; }
-  .botones-principal-top a:nth-child(3) { grid-column: 3 / 4; grid-row: 1 / 2; }
-  .botones-principal-top a:nth-child(4) { grid-column: 4 / 5; grid-row: 1 / 2; }
-  .botones-principal-top a:nth-child(5) { grid-column: 1 / 3; grid-row: 2 / 3; }
-  .botones-principal-top a:nth-child(6) { grid-column: 3 / 5; grid-row: 2 / 3; }
-  .botones-principal-top a:nth-child(7) { grid-column: 1 / 5; grid-row: 3 / 3; }
+  /* NUEVO ORDEN DE LOS BOTONES - CONTÁCTANOS AL LADO DE SERVICIOS Y ALIANZAS */
+  .botones-principal-top a:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 2; } /* INICIO */
+  .botones-principal-top a:nth-child(2) { grid-column: 2 / 3; grid-row: 1 / 2; } /* SOBRE NOSOTR */
+  .botones-principal-top a:nth-child(3) { grid-column: 3 / 4; grid-row: 1 / 2; } /* MISIÓN */
+  .botones-principal-top a:nth-child(4) { grid-column: 4 / 5; grid-row: 1 / 2; } /* VISIÓN */
+  .botones-principal-top a:nth-child(5) { grid-column: 1 / 3; grid-row: 2 / 3; } /* ALIANZAS */
+  .botones-principal-top a:nth-child(6) { grid-column: 3 / 5; grid-row: 2 / 3; } /* SERVICIOS */
+  .botones-principal-top a:nth-child(7) { grid-column: 1 / 5; grid-row: 3 / 4; } /* CONTÁCTANOS - AHORA EN TERCERA FILA PERO COMPARTIENDO CON OTROS */
+  
+  /* CAMBIO: CONTÁCTANOS AHORA COMPARTE FILA CON ALIANZAS Y SERVICIOS */
+  .botones-principal-top a:nth-child(5) { grid-column: 1 / 2; grid-row: 2 / 3; } /* ALIANZAS */
+  .botones-principal-top a:nth-child(6) { grid-column: 2 / 3; grid-row: 2 / 3; } /* SERVICIOS */
+  .botones-principal-top a:nth-child(7) { grid-column: 3 / 5; grid-row: 2 / 3; } /* CONTÁCTANOS - AHORA AL LADO */
   
   /* BOTONES MÁS ANCHOS EN VERTICAL - MANTENIENDO TAMAÑO ORIGINAL */
   .boton, .boton-secundario {
     padding: 7px 5px;
-    font-size: 0.4rem !important; /* Manteniendo tamaño original */
+    font-size: 0.4rem !important;
     gap: 3px;
     white-space: nowrap;
     min-width: auto;
@@ -440,10 +445,10 @@ footer .redes a {
     letter-spacing: 0px;
   }
   
-  /* CONTÁCTANOS más ancho */
+  /* CONTÁCTANOS más ancho pero ahora comparte fila */
   .botones-principal-top a:nth-child(7) .boton-secundario {
-    font-size: 0.65rem !important;
-    padding: 10px 6px;
+    font-size: 0.6rem !important; /* Un poco más pequeño para que quepa */
+    padding: 8px 4px;
   }
   
   /* Botones primarios */
@@ -486,22 +491,22 @@ footer .redes a {
   }
   
   .main-content {
-    padding-top: 140px; /* Más espacio para botones más grandes */
+    padding-top: 120px; /* Menos espacio ya que hay una fila menos */
     min-height: 70vh;
   }
   
-  /* TRES FOTOS MÁS PEQUEÑAS EN VERTICAL */
+  /* TRES FOTOS MÁS GRANDES Y MEJOR SEPARADAS EN VERTICAL */
   .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
-    width: 45px !important; /* Más pequeñas */
-    height: 45px !important; /* Más pequeñas */
+    width: 65px !important; /* Más grandes que antes */
+    height: 65px !important; /* Más grandes que antes */
   }
   
   .jaguar-logo-alt {
-    bottom: 60px !important; /* Menos separación */
+    bottom: 80px !important; /* Más separación */
   }
   
   .jaguar-logo-extra {
-    bottom: 110px !important; /* Menos separación */
+    bottom: 150px !important; /* Más separación */
   }
   
   .logo-img {
@@ -532,7 +537,7 @@ footer .redes a {
     left: 50%;
     transform: translateX(-50%);
     flex-direction: row;
-    gap: 8px; /* Manteniendo separación original */
+    gap: 8px;
     z-index: 5;
     background: rgba(0, 0, 0, 0.9);
     padding: 10px 20px;
@@ -548,8 +553,8 @@ footer .redes a {
   
   /* BOTONES MÁS PEQUEÑOS EN HORIZONTAL PARA QUE QUEPAN MEJOR */
   .boton, .boton-secundario {
-    padding: 8px 10px; /* Reducido el padding */
-    font-size: 0.65rem !important; /* Texto más pequeño */
+    padding: 8px 10px;
+    font-size: 0.65rem !important;
     gap: 4px;
     white-space: nowrap;
     min-width: auto;
@@ -563,31 +568,31 @@ footer .redes a {
   }
   
   /* ESPECIAL PARA "SOBRE NOSOTR" - DIVIDIR EN DOS LÍNEAS */
-  .botones-principal-top a:nth-child(1) .boton,
-  .botones-principal-top a:nth-child(1) .boton-secundario {
+  .botones-principal-top a:nth-child(2) .boton,
+  .botones-principal-top a:nth-child(2) .boton-secundario {
     white-space: normal !important;
     line-height: 1 !important;
     padding: 6px 8px !important;
   }
   
-  .botones-principal-top a:nth-child(1) .boton::after,
-  .botones-principal-top a:nth-child(1) .boton-secundario::after {
+  .botones-principal-top a:nth-child(2) .boton::after,
+  .botones-principal-top a:nth-child(2) .boton-secundario::after {
     content: "NOSOTR";
     display: block;
     font-size: 0.6rem;
     margin-top: -2px;
   }
   
-  .botones-principal-top a:nth-child(1) .boton::before,
-  .botones-principal-top a:nth-child(1) .boton-secundario::before {
+  .botones-principal-top a:nth-child(2) .boton::before,
+  .botones-principal-top a:nth-child(2) .boton-secundario::before {
     content: "SOBRE";
     display: block;
     font-size: 0.6rem;
   }
   
   /* OCULTAR TEXTO ORIGINAL DE "SOBRE NOSOTR" */
-  .botones-principal-top a:nth-child(1) .boton span,
-  .botones-principal-top a:nth-child(1) .boton-secundario span {
+  .botones-principal-top a:nth-child(2) .boton span,
+  .botones-principal-top a:nth-child(2) .boton-secundario span {
     display: none !important;
   }
   
@@ -637,27 +642,27 @@ footer .redes a {
   }
   
   .main-content {
-    padding-top: 85px; /* Menos espacio para botones más pequeños */
+    padding-top: 85px;
     min-height: 60vh;
   }
   
   /* LOGO MÁS GRANDE EN HORIZONTAL */
   .logo-img {
-    max-width: 140px !important; /* Logo más grande */
+    max-width: 140px !important;
   }
   
   /* TRES FOTOS MÁS SEPARADAS EN HORIZONTAL */
   .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
-    width: 70px !important; /* Más grandes */
-    height: 70px !important; /* Más grandes */
+    width: 70px !important;
+    height: 70px !important;
   }
   
   .jaguar-logo-alt {
-    bottom: 80px !important; /* Más separación */
+    bottom: 80px !important;
   }
   
   .jaguar-logo-extra {
-    bottom: 150px !important; /* Más separación */
+    bottom: 150px !important;
   }
   
   .hero-content h1 {
@@ -680,30 +685,30 @@ footer .redes a {
   }
   
   .boton, .boton-secundario {
-    padding: 6px 8px; /* Botones más pequeños */
-    font-size: 0.5rem !important; /* Texto más pequeño */
+    padding: 6px 8px;
+    font-size: 0.5rem !important;
     gap: 3px;
   }
   
   /* AJUSTES PARA "SOBRE NOSOTR" EN PANTALLAS MÁS PEQUEÑAS */
-  .botones-principal-top a:nth-child(1) .boton,
-  .botones-principal-top a:nth-child(1) .boton-secundario {
+  .botones-principal-top a:nth-child(2) .boton,
+  .botones-principal-top a:nth-child(2) .boton-secundario {
     padding: 4px 6px !important;
   }
   
-  .botones-principal-top a:nth-child(1) .boton::before,
-  .botones-principal-top a:nth-child(1) .boton-secundario::before,
-  .botones-principal-top a:nth-child(1) .boton::after,
-  .botones-principal-top a:nth-child(1) .boton-secundario::after {
+  .botones-principal-top a:nth-child(2) .boton::before,
+  .botones-principal-top a:nth-child(2) .boton-secundario::before,
+  .botones-principal-top a:nth-child(2) .boton::after,
+  .botones-principal-top a:nth-child(2) .boton-secundario::after {
     font-size: 0.5rem !important;
   }
   
   .boton i, .boton-secundario i {
-    font-size: 0.5rem !important; /* Iconos más pequeños */
+    font-size: 0.5rem !important;
   }
   
   .main-content {
-    padding-top: 70px; /* Menos espacio */
+    padding-top: 70px;
   }
   
   /* LOGO Y FOTOS AJUSTADOS */
@@ -756,17 +761,17 @@ footer .redes a {
     padding-top: 110px;
   }
   
-  /* FOTOS AÚN MÁS PEQUEÑAS EN PANTALLAS MUY PEQUEÑAS */
+  /* FOTOS MÁS GRANDES INCLUSO EN PANTALLAS PEQUEÑAS */
   .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
-    width: 40px !important;
-    height: 40px !important;
+    width: 55px !important;
+    height: 55px !important;
   }
   
   .jaguar-logo-alt {
-    bottom: 50px !important;
+    bottom: 70px !important;
   }
   
   .jaguar-logo-extra {
-    bottom: 90px !important;
+    bottom: 130px !important;
   }
 }
