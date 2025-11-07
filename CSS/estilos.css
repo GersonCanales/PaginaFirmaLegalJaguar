@@ -424,8 +424,8 @@ footer .redes a {
   
   /* BOTONES MÁS ANCHOS EN VERTICAL */
   .boton, .boton-secundario {
-    padding: 8px 6px;
-    font-size: 0.6rem !important; /* Texto un poco más grande */
+    padding: 7px 5px;
+    font-size: 0.5rem !important; /* Texto un poco más grande */
     gap: 3px;
     white-space: nowrap;
     min-width: auto;
