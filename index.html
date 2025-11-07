@@ -12,6 +12,40 @@
 
 <body>
 
+<script>
+// Menú hamburguesa solo para móviles
+document.getElementById('hamburger')?.addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.getElementById('mobileMenu').classList.toggle('active');
+});
+
+// Cerrar menú al hacer clic en un enlace
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+        document.getElementById('hamburger').classList.remove('active');
+        document.getElementById('mobileMenu').classList.remove('active');
+    });
+});
+</script>
+
+    <!-- Menú móvil (solo visible en teléfonos) -->
+<div class="header-mobile">
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
+        <a href="#SobreNosotros"><i class="fas fa-file-alt"></i> Sobre Nosotros</a>
+        <a href="#mision"><i class="fas fa-bullseye"></i> Misión</a>
+        <a href="#vision"><i class="fas fa-eye"></i> Visión</a>
+        <a href="alianzas.html"><i class="fas fa-handshake"></i> Alianzas</a>
+        <a href="servicios.html"><i class="fas fa-briefcase"></i> Servicios</a>
+        <a href="contacto.html"><i class="fas fa-envelope"></i> Contáctanos</a>
+    </div>
+</div>
+
     <!-- Main con botones, logo y video de fondo -->
         <main class="main-content" id="inicio">
 
