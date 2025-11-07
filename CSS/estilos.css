@@ -441,6 +441,46 @@ footer .redes a {
     transform: rotate(-45deg) translate(6px, -6px);
   }
   
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.98);
+    padding: 15px 0;
+    z-index: 999;
+    border-top: 1px solid var(--verde-jaguar);
+  }
+  
+  .mobile-menu.active {
+    display: block;
+  }
+  
+  .mobile-menu a {
+    display: flex;
+    align-items: center;
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 14px 20px;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s;
+  }
+  
+  .mobile-menu a:hover {
+    background: var(--verde-jaguar);
+    padding-left: 25px;
+  }
+  
+  .mobile-menu a i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--dorado-jaguar);
+  }
+  
   /* El resto de tu CSS para vertical se mantiene igual */
   .main-content {
     padding-top: 80px;
@@ -450,7 +490,6 @@ footer .redes a {
   .logo-img {
     max-width: 150px;
   }
-  
   
   .curva-verde {
     width: 70vw;
@@ -509,80 +548,217 @@ footer .redes a {
 
 /* ===== TELÉFONOS EN HORIZONTAL (Landscape) ===== */
 @media (max-width: 900px) and (orientation: landscape) {
-  /* OCULTAR menú hamburguesa y MOSTRAR botones normales */
-  .header-mobile {
+  /* SIEMPRE MENÚ HAMBURGUESA - OCULTAR BOTONES NORMALES */
+  .botones-principal-top {
     display: none !important;
   }
   
-  .botones-principal-top {
-    display: flex !important;
+  .header-mobile {
+    display: block !important;
     position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    flex-direction: row;
-    gap: 4px; /* Reducir espacio entre botones */
-    z-index: 5;
-    background: rgba(0, 0, 0, 0.85);
-    padding: 6px 12px; /* Reducir padding */
-    border-radius: 40px;
-    backdrop-filter: blur(10px);
-    width: auto;
-    max-width: 95%;
-    flex-wrap: wrap;
-    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    padding: 8px 15px;
+    border-bottom: 2px solid var(--dorado-jaguar);
   }
   
-  /* BOTONES MÁS COMPACTOS */
-  .boton, .boton-secundario {
-    padding: 6px 10px; /* Más compacto */
-    font-size: 0.7rem; /* Texto más pequeño */
-    gap: 4px; /* Menos espacio entre icono y texto */
-    white-space: nowrap;
-    min-width: auto;
+  .hamburger {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
   }
   
-  /* ICONOS MÁS PEQUEÑOS */
-  .boton i, .boton-secundario i {
-    font-size: 0.8rem; /* Iconos más pequeños */
+  .hamburger span {
+    width: 22px;
+    height: 2.5px;
+    background: var(--dorado-jaguar);
+    margin: 2.5px 0;
+    transition: 0.3s;
+    border-radius: 2px;
   }
   
-  /* OPCIONAL: Ocultar texto en botones muy largos y solo mostrar iconos */
-  @media (max-width: 700px) and (orientation: landscape) {
-    .boton span, .boton-secundario span {
-      display: none; /* Ocultar texto, solo mostrar iconos */
-    }
-    
-    .boton, .boton-secundario {
-      padding: 8px 10px; /* Ajustar para solo iconos */
-      font-size: 0; /* Ocultar texto */
-    }
-    
-    .boton i, .boton-secundario i {
-      font-size: 1rem; /* Iconos visibles */
-      margin: 0;
-    }
+  /* MENSAJE MÁS COMPACTO PARA HORIZONTAL */
+  .hamburger::after {
+    content: "MENÚ";
+    color: var(--dorado-jaguar);
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.98);
+    padding: 12px 0;
+    z-index: 999;
+    border-top: 1px solid var(--verde-jaguar);
+  }
+  
+  .mobile-menu.active {
+    display: block;
+  }
+  
+  .mobile-menu a {
+    display: flex;
+    align-items: center;
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s;
+  }
+  
+  .mobile-menu a:hover {
+    background: var(--verde-jaguar);
+    padding-left: 25px;
+  }
+  
+  .mobile-menu a i {
+    margin-right: 10px;
+    width: 18px;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--dorado-jaguar);
   }
   
   .main-content {
-    padding-top: 80px; /* Menos espacio arriba */
+    padding-top: 60px;
     min-height: 60vh;
   }
   
   .hero-content h1 {
-    font-size: 1.8rem; /* Texto más pequeño */
-    top: 20px;
+    font-size: 1.6rem;
+    top: 15px;
   }
   
   .hero-content p {
-    font-size: 1rem; /* Texto más pequeño */
-    margin-top: 100px;
+    font-size: 0.9rem;
+    margin-top: 80px;
   }
   
   .logo-img {
-    max-width: 120px; /* Logo más pequeño */
+    max-width: 100px;
+  }
+  
+  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .jaguar-logo-alt {
+    bottom: 70px;
+  }
+  
+  .jaguar-logo-extra {
+    bottom: 130px;
   }
 }
+
+/* ===== TELÉFONOS HORIZONTALES MÁS PEQUEÑOS ===== */
+@media (max-width: 700px) and (orientation: landscape) and (max-height: 400px) {
+  .header-mobile {
+    padding: 6px 12px;
+  }
+  
+  .hamburger::after {
+    font-size: 0.8rem;
+  }
+  
+  .hamburger span {
+    width: 20px;
+    height: 2px;
+  }
+  
+  .mobile-menu a {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+  }
+  
+  .main-content {
+    padding-top: 50px;
+    min-height: 50vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.4rem;
+    top: 10px;
+  }
+  
+  .hero-content p {
+    font-size: 0.8rem;
+    margin-top: 60px;
+  }
+  
+  .logo-img {
+    max-width: 80px;
+  }
+  
+  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .jaguar-logo-alt {
+    bottom: 60px;
+  }
+  
+  .jaguar-logo-extra {
+    bottom: 110px;
+  }
+}
+
+/* ===== TELÉFONOS HORIZONTALES GRANDES (Tablets pequeñas) ===== */
+@media (min-width: 701px) and (max-width: 900px) and (orientation: landscape) {
+  .header-mobile {
+    padding: 10px 15px;
+  }
+  
+  .hamburger::after {
+    font-size: 1rem;
+  }
+  
+  .mobile-menu a {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+  
+  .main-content {
+    padding-top: 80px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+    top: 30px;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+    margin-top: 120px;
+  }
+  
+  .logo-img {
+    max-width: 150px;
+  }
   
   .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
     width: 70px;
@@ -595,79 +771,5 @@ footer .redes a {
   
   .jaguar-logo-extra {
     bottom: 170px;
-  }
-
-/* ===== TELÉFONOS HORIZONTALES MÁS PEQUEÑOS ===== */
-@media (max-width: 700px) and (orientation: landscape) and (max-height: 400px) {
-  .botones-principal-top {
-    top: 10px;
-    padding: 10px 15px;
-    gap: 8px;
-  }
-  
-  .boton, .boton-secundario {
-    padding: 10px 14px;
-    font-size: 0.8rem;
-    gap: 6px;
-  }
-  
-  .boton i, .boton-secundario i {
-    font-size: 1rem;
-  }
-  
-  .main-content {
-    padding-top: 100px;
-    min-height: 50vh;
-  }
-  
-  .hero-content h1 {
-    font-size: 1.8rem;
-    top: 20px;
-  }
-  
-  .hero-content p {
-    font-size: 1rem;
-    margin-top: 100px;
-  }
-  
-  .logo-img {
-    max-width: 140px;
-  }
-}
-
-/* ===== TELÉFONOS HORIZONTALES GRANDES (Tablets pequeñas) ===== */
-@media (min-width: 701px) and (max-width: 900px) and (orientation: landscape) {
-  .botones-principal-top {
-    top: 25px;
-    gap: 15px;
-    padding: 15px 25px;
-  }
-  
-  .boton, .boton-secundario {
-    padding: 14px 20px;
-    font-size: 1rem;
-    gap: 10px;
-  }
-  
-  .boton i, .boton-secundario i {
-    font-size: 1.2rem;
-  }
-  
-  .main-content {
-    padding-top: 140px;
-  }
-  
-  .hero-content h1 {
-    font-size: 2.5rem;
-    top: 50px;
-  }
-  
-  .hero-content p {
-    font-size: 1.3rem;
-    margin-top: 160px;
-  }
-  
-  .logo-img {
-    max-width: 200px;
   }
 }
