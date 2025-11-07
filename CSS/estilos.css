@@ -386,7 +386,7 @@ footer .redes a {
   }
 }
 
-/* ===== TELÉFONOS EN VERTICAL (Portrait) ===== */
+/* ===== TELÉFONOS EN VERTICAL (Portrait) - 2 FILAS × 4 COLUMNAS ===== */
 @media (max-width: 600px) and (orientation: portrait) {
   /* OCULTAR menú hamburguesa y MOSTRAR botones normales */
   .header-mobile {
@@ -394,37 +394,54 @@ footer .redes a {
   }
   
   .botones-principal-top {
-    display: flex !important;
+    display: grid !important;
     position: fixed;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    flex-direction: row;
-    gap: 4px;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    grid-template-rows: repeat(2, auto);   /* 2 filas */
+    gap: 6px;
     z-index: 5;
     background: rgba(0, 0, 0, 0.9);
-    padding: 8px 15px;
-    border-radius: 40px;
+    padding: 10px 15px;
+    border-radius: 20px;
     backdrop-filter: blur(15px);
     border: 2px solid rgba(197, 163, 63, 0.3);
-    width: auto;
+    width: 95%;
     max-width: 95%;
-    flex-wrap: wrap;
-    justify-content: center;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   }
   
+  /* ORDEN DE LOS BOTONES - 2 filas × 4 columnas */
+  .botones-principal-top a:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 2; } /* INICIO */
+  .botones-principal-top a:nth-child(2) { grid-column: 2 / 3; grid-row: 1 / 2; } /* SOBRE NOSOTROS */
+  .botones-principal-top a:nth-child(3) { grid-column: 3 / 4; grid-row: 1 / 2; } /* MISIÓN */
+  .botones-principal-top a:nth-child(4) { grid-column: 4 / 5; grid-row: 1 / 2; } /* VISIÓN */
+  .botones-principal-top a:nth-child(5) { grid-column: 1 / 3; grid-row: 2 / 3; } /* ALIANZAS */
+  .botones-principal-top a:nth-child(6) { grid-column: 3 / 5; grid-row: 2 / 3; } /* SERVICIOS */
+  .botones-principal-top a:nth-child(7) { grid-column: 1 / 5; grid-row: 3 / 4; } /* CONTÁCTANOS */
+  
   /* BOTONES MÁS COMPACTOS PARA VERTICAL */
   .boton, .boton-secundario {
-    padding: 8px 12px;
-    font-size: 0.7rem; /* Texto más pequeño */
-    gap: 4px;
+    padding: 8px 6px;
+    font-size: 0.65rem; /* Texto más pequeño */
+    gap: 3px;
     white-space: nowrap;
     min-width: auto;
-    border-radius: 50px;
+    border-radius: 25px;
     font-weight: 700;
     text-transform: uppercase;
     transition: all 0.3s ease;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  /* Botón CONTÁCTANOS más ancho */
+  .botones-principal-top a:nth-child(7) .boton-secundario {
+    grid-column: 1 / 5;
+    width: 100%;
   }
   
   /* Botones primarios */
@@ -432,21 +449,21 @@ footer .redes a {
     color: var(--blanco);
     background: linear-gradient(135deg, #007a45, #c5a33f);
     border: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
   }
   
   .boton:hover {
     background: linear-gradient(135deg, #c5a33f, #007a45);
     transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.3);
   }
   
   /* Botones secundarios */
   .boton-secundario {
     color: #007a45;
     background: var(--blanco);
-    border: 2px solid #007a45;
-    box-shadow: 0 4px 12px rgba(0,107,60,0.15);
+    border: 1.5px solid #007a45;
+    box-shadow: 0 3px 8px rgba(0,107,60,0.15);
   }
   
   .boton-secundario:hover {
@@ -458,19 +475,20 @@ footer .redes a {
   
   /* Iconos más pequeños */
   .boton i, .boton-secundario i {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     transition: transform 0.3s;
   }
   
   .boton:hover i, .boton-secundario:hover i {
-    transform: translateX(3px);
+    transform: translateX(2px);
   }
   
   .main-content {
-    padding-top: 100px;
+    padding-top: 140px; /* Más espacio para las 2 filas */
     min-height: 70vh;
   }
   
+  /* Resto de ajustes para vertical... */
   .logo-img {
     max-width: 150px;
   }
@@ -530,7 +548,7 @@ footer .redes a {
   }
 }
 
-/* ===== TELÉFONOS EN HORIZONTAL (Landscape) ===== */
+/* ===== TELÉFONOS EN HORIZONTAL (Landscape) - TEXTO MÁS PEQUEÑO ===== */
 @media (max-width: 900px) and (orientation: landscape) {
   /* OCULTAR menú hamburguesa y MOSTRAR botones normales */
   .header-mobile {
@@ -540,32 +558,32 @@ footer .redes a {
   .botones-principal-top {
     display: flex !important;
     position: fixed;
-    top: 10px;
+    top: 8px;
     left: 50%;
     transform: translateX(-50%);
     flex-direction: row;
-    gap: 5px;
+    gap: 4px;
     z-index: 5;
     background: rgba(0, 0, 0, 0.9);
-    padding: 6px 12px;
-    border-radius: 40px;
+    padding: 5px 10px;
+    border-radius: 30px;
     backdrop-filter: blur(15px);
     border: 2px solid rgba(197, 163, 63, 0.3);
     width: auto;
-    max-width: 95%;
+    max-width: 98%;
     flex-wrap: nowrap;
     justify-content: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   }
   
-  /* BOTONES MÁS COMPACTOS PARA HORIZONTAL - TEXTO MÁS PEQUEÑO */
+  /* BOTONES MÁS COMPACTOS PARA HORIZONTAL - TEXTO MUY PEQUEÑO */
   .boton, .boton-secundario {
-    padding: 6px 10px;
-    font-size: 0.65rem; /* Texto aún más pequeño */
-    gap: 3px;
+    padding: 5px 8px;
+    font-size: 0.6rem; /* Texto aún más pequeño */
+    gap: 2px;
     white-space: nowrap;
     min-width: auto;
-    border-radius: 50px;
+    border-radius: 20px;
     font-weight: 700;
     text-transform: uppercase;
     transition: all 0.3s ease;
@@ -576,104 +594,53 @@ footer .redes a {
     color: var(--blanco);
     background: linear-gradient(135deg, #007a45, #c5a33f);
     border: none;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
   }
   
   .boton:hover {
     background: linear-gradient(135deg, #c5a33f, #007a45);
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   }
   
   /* Botones secundarios */
   .boton-secundario {
     color: #007a45;
     background: var(--blanco);
-    border: 2px solid #007a45;
-    box-shadow: 0 3px 10px rgba(0,107,60,0.15);
+    border: 1.5px solid #007a45;
+    box-shadow: 0 2px 6px rgba(0,107,60,0.15);
   }
   
   .boton-secundario:hover {
     background: #007a45;
     color: var(--blanco);
     border-color: #c5a33f;
-    transform: translateY(-2px) scale(1.03);
+    transform: translateY(-1px) scale(1.02);
   }
   
   /* Iconos más pequeños */
   .boton i, .boton-secundario i {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     transition: transform 0.3s;
   }
   
   .boton:hover i, .boton-secundario:hover i {
-    transform: translateX(2px);
+    transform: translateX(1px);
   }
   
   .main-content {
-    padding-top: 80px;
+    padding-top: 70px;
     min-height: 60vh;
   }
   
   .hero-content h1 {
-    font-size: 1.8rem;
-    top: 20px;
+    font-size: 1.6rem;
+    top: 15px;
   }
   
   .hero-content p {
-    font-size: 1rem;
-    margin-top: 100px;
-  }
-  
-  .logo-img {
-    max-width: 120px;
-  }
-  
-  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .jaguar-logo-alt {
-    bottom: 70px;
-  }
-  
-  .jaguar-logo-extra {
-    bottom: 130px;
-  }
-}
-
-/* ===== TELÉFONOS HORIZONTALES MÁS PEQUEÑOS ===== */
-@media (max-width: 700px) and (orientation: landscape) and (max-height: 400px) {
-  .botones-principal-top {
-    top: 5px;
-    padding: 4px 10px;
-    gap: 3px;
-  }
-  
-  .boton, .boton-secundario {
-    padding: 5px 8px;
-    font-size: 0.6rem; /* Texto mínimo */
-    gap: 2px;
-  }
-  
-  .boton i, .boton-secundario i {
-    font-size: 0.65rem;
-  }
-  
-  .main-content {
-    padding-top: 60px;
-    min-height: 50vh;
-  }
-  
-  .hero-content h1 {
-    font-size: 1.4rem;
-    top: 10px;
-  }
-  
-  .hero-content p {
-    font-size: 0.8rem;
-    margin-top: 70px;
+    font-size: 0.9rem;
+    margin-top: 80px;
   }
   
   .logo-img {
@@ -681,16 +648,67 @@ footer .redes a {
   }
   
   .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
   }
   
   .jaguar-logo-alt {
-    bottom: 60px;
+    bottom: 65px;
   }
   
   .jaguar-logo-extra {
-    bottom: 110px;
+    bottom: 120px;
+  }
+}
+
+/* ===== TELÉFONOS HORIZONTALES MÁS PEQUEÑOS ===== */
+@media (max-width: 700px) and (orientation: landscape) and (max-height: 400px) {
+  .botones-principal-top {
+    top: 5px;
+    padding: 3px 8px;
+    gap: 2px;
+  }
+  
+  .boton, .boton-secundario {
+    padding: 4px 6px;
+    font-size: 0.55rem; /* Texto mínimo */
+    gap: 1px;
+  }
+  
+  .boton i, .boton-secundario i {
+    font-size: 0.6rem;
+  }
+  
+  .main-content {
+    padding-top: 50px;
+    min-height: 50vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.3rem;
+    top: 8px;
+  }
+  
+  .hero-content p {
+    font-size: 0.75rem;
+    margin-top: 60px;
+  }
+  
+  .logo-img {
+    max-width: 80px;
+  }
+  
+  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .jaguar-logo-alt {
+    bottom: 55px;
+  }
+  
+  .jaguar-logo-extra {
+    bottom: 100px;
   }
 }
 
