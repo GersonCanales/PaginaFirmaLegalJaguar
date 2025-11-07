@@ -477,7 +477,7 @@ footer .redes a {
   
   /* Iconos más grandes */
   .boton i, .boton-secundario i {
-    font-size: 0.7rem !important;
+    font-size: 0.4rem !important;
     transition: transform 0.3s;
   }
   
