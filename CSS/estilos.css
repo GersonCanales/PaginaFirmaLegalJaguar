@@ -386,7 +386,7 @@ footer .redes a {
   }
 }
 
-/* ===== TELÉFONOS EN VERTICAL (Portrait) - 2 FILAS × 4 COLUMNAS ===== */
+/* ===== TELÉFONOS EN VERTICAL (Portrait) - TEXTO MUY PEQUEÑO ===== */
 @media (max-width: 600px) and (orientation: portrait) {
   /* OCULTAR menú hamburguesa y MOSTRAR botones normales */
   .header-mobile {
@@ -396,167 +396,36 @@ footer .redes a {
   .botones-principal-top {
     display: grid !important;
     position: fixed;
-    top: 10px;
+    top: 8px;
     left: 50%;
     transform: translateX(-50%);
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-    grid-template-rows: repeat(2, auto);   /* 2 filas */
-    gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 4px;
     z-index: 5;
     background: rgba(0, 0, 0, 0.9);
-    padding: 8px 12px;
-    border-radius: 15px;
+    padding: 6px 10px;
+    border-radius: 12px;
     backdrop-filter: blur(15px);
     border: 2px solid rgba(197, 163, 63, 0.3);
-    width: 95%;
-    max-width: 95%;
+    width: 96%;
+    max-width: 96%;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   }
   
-  /* ORDEN DE LOS BOTONES - 2 filas × 4 columnas */
-  .botones-principal-top a:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 2; } /* INICIO */
-  .botones-principal-top a:nth-child(2) { grid-column: 2 / 3; grid-row: 1 / 2; } /* SOBRE NOSOTROS */
-  .botones-principal-top a:nth-child(3) { grid-column: 3 / 4; grid-row: 1 / 2; } /* MISIÓN */
-  .botones-principal-top a:nth-child(4) { grid-column: 4 / 5; grid-row: 1 / 2; } /* VISIÓN */
-  .botones-principal-top a:nth-child(5) { grid-column: 1 / 3; grid-row: 2 / 3; } /* ALIANZAS */
-  .botones-principal-top a:nth-child(6) { grid-column: 3 / 5; grid-row: 2 / 3; } /* SERVICIOS */
-  .botones-principal-top a:nth-child(7) { grid-column: 1 / 5; grid-row: 3 / 4; } /* CONTÁCTANOS */
+  /* ORDEN DE LOS BOTONES */
+  .botones-principal-top a:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 2; }
+  .botones-principal-top a:nth-child(2) { grid-column: 2 / 3; grid-row: 1 / 2; }
+  .botones-principal-top a:nth-child(3) { grid-column: 3 / 4; grid-row: 1 / 2; }
+  .botones-principal-top a:nth-child(4) { grid-column: 4 / 5; grid-row: 1 / 2; }
+  .botones-principal-top a:nth-child(5) { grid-column: 1 / 3; grid-row: 2 / 3; }
+  .botones-principal-top a:nth-child(6) { grid-column: 3 / 5; grid-row: 2 / 3; }
+  .botones-principal-top a:nth-child(7) { grid-column: 1 / 5; grid-row: 3 / 4; }
   
-  /* BOTONES MÁS COMPACTOS - TEXTO MÁS PEQUEÑO */
+  /* TEXTO EXTREMADAMENTE PEQUEÑO PERO LEGIBLE */
   .boton, .boton-secundario {
-    padding: 6px 4px;
-    font-size: 0.55rem; /* TEXTO MÁS PEQUEÑO */
-    gap: 2px;
-    white-space: nowrap;
-    min-width: auto;
-    border-radius: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-    line-height: 1.1;
-  }
-  
-  /* Botón CONTÁCTANOS más ancho */
-  .botones-principal-top a:nth-child(7) .boton-secundario {
-    grid-column: 1 / 5;
-    width: 100%;
-    font-size: 0.6rem; /* Un poco más grande para CONTÁCTANOS */
-  }
-  
-  /* Botones primarios */
-  .boton {
-    color: var(--blanco);
-    background: linear-gradient(135deg, #007a45, #c5a33f);
-    border: none;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-  }
-  
-  .boton:hover {
-    background: linear-gradient(135deg, #c5a33f, #007a45);
-    transform: translateY(-1px) scale(1.02);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  }
-  
-  /* Botones secundarios */
-  .boton-secundario {
-    color: #007a45;
-    background: var(--blanco);
-    border: 1px solid #007a45;
-    box-shadow: 0 2px 6px rgba(0,107,60,0.15);
-  }
-  
-  .boton-secundario:hover {
-    background: #007a45;
-    color: var(--blanco);
-    border-color: #c5a33f;
-    transform: translateY(-1px) scale(1.02);
-  }
-  
-  /* Iconos más pequeños */
-  .boton i, .boton-secundario i {
-    font-size: 0.6rem;
-    transition: transform 0.3s;
-  }
-  
-  .boton:hover i, .boton-secundario:hover i {
-    transform: translateX(1px);
-  }
-  
-  .main-content {
-    padding-top: 130px; /* Ajustado para las 2 filas */
-    min-height: 70vh;
-  }
-  
-  /* Resto de ajustes para vertical se mantienen igual */
-  .logo-img {
-    max-width: 150px;
-  }
-  
-  .curva-verde {
-    width: 70vw;
-    right: -15%;
-    height: 40%;
-  }
-  
-  .hero-content h1 {
-    font-size: 2rem;
-    top: 40px;
-  }
-  
-  .hero-content p {
-    font-size: 1.1rem;
-    margin-top: 150px;
-  }
-  
-  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .jaguar-logo-alt {
-    bottom: 100px;
-  }
-  
-  .jaguar-logo-extra {
-    bottom: 180px;
-  }
-}
-
-/* ===== TELÉFONOS EN HORIZONTAL (Landscape) - TEXTO MÁS PEQUEÑO ===== */
-@media (max-width: 900px) and (orientation: landscape) {
-  /* OCULTAR menú hamburguesa y MOSTRAR botones normales */
-  .header-mobile {
-    display: none !important;
-  }
-  
-  .botones-principal-top {
-    display: flex !important;
-    position: fixed;
-    top: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    flex-direction: row;
-    gap: 3px;
-    z-index: 5;
-    background: rgba(0, 0, 0, 0.9);
-    padding: 4px 8px;
-    border-radius: 25px;
-    backdrop-filter: blur(15px);
-    border: 2px solid rgba(197, 163, 63, 0.3);
-    width: auto;
-    max-width: 98%;
-    flex-wrap: nowrap;
-    justify-content: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  }
-  
-  /* BOTONES MÁS COMPACTOS - TEXTO MUY PEQUEÑO */
-  .boton, .boton-secundario {
-    padding: 4px 6px;
-    font-size: 0.5rem; /* TEXTO MÁS PEQUEÑO */
+    padding: 5px 3px;
+    font-size: 0.45rem !important; /* TEXTO MUY PEQUEÑO */
     gap: 1px;
     white-space: nowrap;
     min-width: auto;
@@ -564,7 +433,16 @@ footer .redes a {
     font-weight: 700;
     text-transform: uppercase;
     transition: all 0.3s ease;
-    line-height: 1.1;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    line-height: 1;
+    letter-spacing: -0.2px; /* Compactar letras */
+  }
+  
+  /* CONTÁCTANOS un poco más grande */
+  .botones-principal-top a:nth-child(7) .boton-secundario {
+    font-size: 0.5rem !important;
   }
   
   /* Botones primarios */
@@ -596,9 +474,9 @@ footer .redes a {
     transform: translateY(-1px) scale(1.02);
   }
   
-  /* Iconos más pequeños */
+  /* Iconos extremadamente pequeños */
   .boton i, .boton-secundario i {
-    font-size: 0.55rem;
+    font-size: 0.5rem !important;
     transition: transform 0.3s;
   }
   
@@ -607,135 +485,171 @@ footer .redes a {
   }
   
   .main-content {
-    padding-top: 60px;
-    min-height: 60vh;
+    padding-top: 120px;
+    min-height: 70vh;
   }
   
-  .hero-content h1 {
-    font-size: 1.5rem;
-    top: 12px;
-  }
-  
-  .hero-content p {
-    font-size: 0.85rem;
-    margin-top: 70px;
-  }
-  
+  /* Ajustes adicionales para hacer más espacio */
   .logo-img {
-    max-width: 90px;
-  }
-  
-  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .jaguar-logo-alt {
-    bottom: 60px;
-  }
-  
-  .jaguar-logo-extra {
-    bottom: 110px;
-  }
-}
-
-/* ===== TELÉFONOS HORIZONTALES MÁS PEQUEÑOS ===== */
-@media (max-width: 700px) and (orientation: landscape) and (max-height: 400px) {
-  .botones-principal-top {
-    top: 4px;
-    padding: 2px 6px;
-    gap: 2px;
-  }
-  
-  .boton, .boton-secundario {
-    padding: 3px 5px;
-    font-size: 0.45rem; /* TEXTO MÍNIMO */
-    gap: 1px;
-  }
-  
-  .boton i, .boton-secundario i {
-    font-size: 0.5rem;
-  }
-  
-  .main-content {
-    padding-top: 45px;
-    min-height: 50vh;
+    max-width: 130px;
   }
   
   .hero-content h1 {
-    font-size: 1.2rem;
-    top: 6px;
-  }
-  
-  .hero-content p {
-    font-size: 0.7rem;
-    margin-top: 50px;
-  }
-  
-  .logo-img {
-    max-width: 70px;
-  }
-  
-  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .jaguar-logo-alt {
-    bottom: 50px;
-  }
-  
-  .jaguar-logo-extra {
-    bottom: 90px;
-  }
-}
-
-/* ===== TELÉFONOS HORIZONTALES GRANDES (Tablets pequeñas) ===== */
-@media (min-width: 701px) and (max-width: 900px) and (orientation: landscape) {
-  .botones-principal-top {
-    top: 15px;
-    gap: 8px;
-    padding: 8px 18px;
-  }
-  
-  .boton, .boton-secundario {
-    padding: 8px 14px;
-    font-size: 0.75rem;
-    gap: 5px;
-  }
-  
-  .boton i, .boton-secundario i {
-    font-size: 0.8rem;
-  }
-  
-  .main-content {
-    padding-top: 100px;
-  }
-  
-  .hero-content h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     top: 30px;
   }
   
   .hero-content p {
-    font-size: 1.1rem;
-    margin-top: 120px;
-  }
-  
-  .logo-img {
-    max-width: 150px;
+    font-size: 1rem;
+    margin-top: 130px;
   }
   
   .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
-    width: 65px;
-    height: 65px;
+    width: 70px;
+    height: 70px;
   }
   
   .jaguar-logo-alt {
-    bottom: 80px;
+    bottom: 90px;
   }
   
   .jaguar-logo-extra {
-    bottom: 150px;
+    bottom: 160px;
+  }
+}
+
+/* ===== TELÉFONOS EN HORIZONTAL (Landscape) - TEXTO EXTREMADAMENTE PEQUEÑO ===== */
+@media (max-width: 900px) and (orientation: landscape) {
+  .header-mobile {
+    display: none !important;
+  }
+  
+  .botones-principal-top {
+    display: flex !important;
+    position: fixed;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    gap: 2px;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 3px 6px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(197, 163, 63, 0.3);
+    width: auto;
+    max-width: 99%;
+    flex-wrap: nowrap;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* TEXTO EXTREMADAMENTE PEQUEÑO PARA HORIZONTAL */
+  .boton, .boton-secundario {
+    padding: 3px 4px;
+    font-size: 0.4rem !important; /* TEXTO MUY PEQUEÑO */
+    gap: 1px;
+    white-space: nowrap;
+    min-width: auto;
+    border-radius: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    line-height: 1;
+    letter-spacing: -0.3px;
+  }
+  
+  /* Botones primarios */
+  .boton {
+    color: var(--blanco);
+    background: linear-gradient(135deg, #007a45, #c5a33f);
+    border: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  }
+  
+  .boton:hover {
+    background: linear-gradient(135deg, #c5a33f, #007a45);
+    transform: translateY(-1px) scale(1.01);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  
+  /* Botones secundarios */
+  .boton-secundario {
+    color: #007a45;
+    background: var(--blanco);
+    border: 0.8px solid #007a45;
+    box-shadow: 0 1px 3px rgba(0,107,60,0.15);
+  }
+  
+  .boton-secundario:hover {
+    background: #007a45;
+    color: var(--blanco);
+    border-color: #c5a33f;
+    transform: translateY(-1px) scale(1.01);
+  }
+  
+  /* Iconos extremadamente pequeños */
+  .boton i, .boton-secundario i {
+    font-size: 0.45rem !important;
+    transition: transform 0.3s;
+  }
+  
+  .boton:hover i, .boton-secundario:hover i {
+    transform: translateX(0.5px);
+  }
+  
+  .main-content {
+    padding-top: 50px;
+    min-height: 60vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.3rem;
+    top: 8px;
+  }
+  
+  .hero-content p {
+    font-size: 0.8rem;
+    margin-top: 60px;
+  }
+  
+  .logo-img {
+    max-width: 80px;
+  }
+  
+  .jaguar-logo, .jaguar-logo-alt, .jaguar-logo-extra {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .jaguar-logo-alt {
+    bottom: 55px;
+  }
+  
+  .jaguar-logo-extra {
+    bottom: 100px;
+  }
+}
+
+/* ===== TELÉFONOS MUY PEQUEÑOS ===== */
+@media (max-width: 350px) and (orientation: portrait) {
+  .botones-principal-top {
+    padding: 4px 8px;
+    gap: 3px;
+  }
+  
+  .boton, .boton-secundario {
+    padding: 4px 2px;
+    font-size: 0.4rem !important; /* AÚN MÁS PEQUEÑO */
+    letter-spacing: -0.3px;
+  }
+  
+  .boton i, .boton-secundario i {
+    font-size: 0.45rem !important;
+  }
+  
+  .main-content {
+    padding-top: 110px;
   }
 }
